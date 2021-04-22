@@ -7,6 +7,7 @@ import BuildIcon from "@material-ui/icons/Build";
 import MailIcon from "@material-ui/icons/Mail";
 
 import Nav from "./Nav";
+import Footer from "./Footer";
 
 const LINKS = [
   {
@@ -30,7 +31,7 @@ const LINKS = [
 ];
 
 function Layout({ children }) {
-  const [broken, setBroken] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   return (
     <>
@@ -39,13 +40,19 @@ function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="md:hidden fixed z-50 left-3 top-3 h-10 w-10 bg-black bg-opacity-40 rounded">
-        <IconButton color="default" className="h-10 w-10 ">
+        <IconButton
+          aria-label="Menu"
+          onClick={() => setCollapsed(!collapsed)}
+          color="default"
+          className="h-10 w-10 "
+        >
           <MenuIcon className="text-lg text-white" />
         </IconButton>
       </div>
-      <Nav links={LINKS} />
-      <div className="min-h-screen w-content min-w-full md:ml-16">
+      <Nav collapsed={collapsed} links={LINKS} setCollapsed={setCollapsed} />
+      <div className="min-h-screen md:ml-16">
         {children}
+        <Footer />
       </div>
     </>
   );
