@@ -40,7 +40,7 @@ function Nav(props) {
   return (
     <div
       className={
-        "fixed md:w-16 overflow-hidden min-h-screen bg-gray-900 bg-opacity-60 md:bg-opacity-100 duration-200 z-40" +
+        "fixed md:w-16 overflow-hidden min-h-screen bg-black bg-opacity-60 md:bg-opacity-80 duration-200 z-40" +
         getWidth(props.collapsed)
       }
     >

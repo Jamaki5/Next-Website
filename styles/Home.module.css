@@ -50,3 +50,16 @@
 .numberColor {
   color: #b5cea8;
 }
+
+.reactPicture{
+  animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
+}

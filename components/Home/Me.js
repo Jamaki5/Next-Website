@@ -1,8 +1,12 @@
-import React, { useEffect, useReducer, useState } from "react";
-import Parallax from "react-rellax";
+import React, { useEffect, useReducer } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 import style from "../../styles/Home.module.css";
+
+const NoSSRBackground = dynamic(() => import("./MeBackground"), {
+  ssr: false,
+});
 
 const titles = ["Software developer", "Gamer", "Computer science student"];
 
@@ -55,13 +59,6 @@ function reducer(state, action) {
 }
 
 function Me() {
-  const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => {
-    if (typeof window !== "undefined") {
-      setOffsetY(window?.pageYOffset);
-    }
-  };
-
   const [description, dispatch] = useReducer(reducer, {
     text: "Software developer",
     word: 0,
@@ -72,69 +69,17 @@ function Me() {
   });
 
   useEffect(() => {
-    window?.addEventListener("scroll", handleScroll);
     const idText = setInterval(() => {
       dispatch({});
     }, 100);
     return () => {
-      window?.removeEventListener("scroll", handleScroll);
       clearInterval(idText);
     };
   }, []);
 
-  function getWindow(height) {
-    if (typeof window !== "undefined") {
-      if (height) {
-        return window?.innerHeight;
-      }
-      return window?.innerWidth;
-    }
-    return "Sorry";
-  }
-
   return (
     <div className={style.page}>
-      <div className={style.background}>
-        <Parallax
-          speed={6}
-          className={style.backgroundItem}
-          style={{ left: "20%", top: "20%", transform: "rotateZ(-10deg)" }}
-        >
-          <div className={style.importColor}>import &nbsp;</div>
-          <div className={style.varColor}>React &nbsp;</div>
-          <div className={style.importColor}>from &nbsp;</div>
-          <div className={style.stringColor}>'react'</div>
-        </Parallax>
-        <Parallax
-          speed={8}
-          className={style.backgroundItem}
-          style={{ right: "20%", top: "50%", transform: "rotateZ(17deg)" }}
-        >
-          <div className={style.constColor}>const</div>
-          <div>[</div>
-          <div className={style.varColor}>offsetY</div>
-          <div>,</div>
-          <div className={style.varColor}>&nbsp; setOffsetY</div>
-          <div>] = &nbsp;</div>
-          <div className={style.functionColor}>useState</div>
-          <div>(</div>
-          <div className={style.numberColor}>{offsetY}</div>
-          <div>)</div>
-        </Parallax>
-        <Parallax
-          speed={2}
-          className={style.backgroundItem}
-          style={{ left: "20%", top: "75%", transform: "rotateZ(-12deg)" }}
-        >
-          <div className={style.constColor}>&#123;</div>
-          <div className={style.varColor}>windowH:&nbsp;</div>
-          <div className={style.varColor}>{getWindow(true)}</div>
-          <div>,&nbsp;</div>
-          <div className={style.varColor}>windowW:&nbsp;</div>
-          <div className={style.varColor}>{getWindow(false)}</div>
-          <div className={style.constColor}>&#125;</div>
-        </Parallax>
-      </div>
+      <NoSSRBackground />
       <div className="h-full w-full">
         <div className="hidden md:grid h-full w-full px-4">
           <div className="grid grid-cols-3">
