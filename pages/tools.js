@@ -1,8 +1,8 @@
-import React from "react";
+import style from "../styles/All.module.css";
 
 function tools() {
   return (
-    <div>
+    <div className={style.page}>
       <div>This is the Tools Page</div>
     </div>
   );

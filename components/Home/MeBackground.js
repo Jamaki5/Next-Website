@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Parallax from "react-rellax";
 
-import style from "../../styles/Home.module.css";
+import style from "../../styles/All.module.css";
 
 function MeBackground() {
   const [offsetY, setOffsetY] = useState(0);

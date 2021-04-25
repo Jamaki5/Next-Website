@@ -2,7 +2,7 @@ import React, { useEffect, useReducer } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
-import style from "../../styles/Home.module.css";
+import style from "../../styles/All.module.css";
 
 const NoSSRBackground = dynamic(() => import("./MeBackground"), {
   ssr: false,

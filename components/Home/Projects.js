@@ -6,31 +6,63 @@ import Button from "@material-ui/core/Button";
 import Link from "next/link";
 import Image from "next/image";
 
-import style from "../../styles/Home.module.css";
+import style from "../../styles/All.module.css";
 
 const PROJECTS = [
   {
     name: "Website",
-    description: "The currend Website",
-    picture: null,
+    description: "The current Website",
+    picture: (
+      <Image
+        alt="Website"
+        src="/pictures/website.jpg"
+        width="16"
+        height="9"
+        layout="responsive"
+      />
+    ),
     link: null,
   },
   {
     name: "Tools",
     description: "Little Tools for everyone",
-    picture: null,
+    picture: (
+      <Image
+        alt="Tools"
+        src="/pictures/website.jpg"
+        width="16"
+        height="9"
+        layout="responsive"
+      />
+    ),
     link: { extern: false, to: "/tools" },
   },
   {
     name: "Triggerbot CS:GO",
     description: "External Triggerbot for CS:GO",
-    picture: null,
+    picture: (
+      <Image
+        alt="Triggerbot"
+        src="/pictures/website.jpg"
+        width="16"
+        height="9"
+        layout="responsive"
+      />
+    ),
     link: { extern: true, to: "https://github.com/Jamaki5/CS" },
   },
   {
     name: "Chat App",
     description: "Self hostable Chat App (wip)",
-    picture: null,
+    picture: (
+      <Image
+        alt="Chat App"
+        src="/pictures/website.jpg"
+        width="16"
+        height="9"
+        layout="responsive"
+      />
+    ),
     link: { extern: true, to: "https://github.com/Jamaki5/chat" },
   },
 ];
@@ -79,19 +111,13 @@ function Projects() {
         key={name}
       >
         <Card className="w-full hover:shadow-xl">
-          <CardMedia alt={name} height="140" title={name}>
-            <Image
-              alt="Jann-Marten Kias"
-              src="/pictures/website.jpg"
-              width="16"
-              height="9"
-              layout="responsive"
-            />
+          <CardMedia alt={name} title={name}>
+            {picture}
           </CardMedia>
           <CardContent className="grid grid-cols-3 justify-items-center items-center">
             <div className="justify-self-start col-start-1 col-end-3">
-              <div className="text-2xl">{name}</div>
-              <div className="text-xl">{description}</div>
+              <div className="text-2xl text-black">{name}</div>
+              <div className="text-xl text-black">{description}</div>
             </div>
             <div className="w-5/6 bg-blue-500 rounded hover:shadow-md duration-200">
               {getLink(link)}
@@ -132,7 +158,13 @@ function Projects() {
           className={style.backgroundItem + " w-1/5 md:w-50"}
           style={{ top: "20%", left: "15%", transform: "rotateZ(20deg)" }}
         >
-          <Image className={style.reactPicture} src="/pictures/projects/react.png" width={300} height={300} />
+          <Image
+            alt="reactPicture"
+            className={style.reactPicture}
+            src="/pictures/projects/react.png"
+            width={300}
+            height={300}
+          />
         </Parallax>
         <Parallax
           percentage={0.9}
@@ -140,7 +172,12 @@ function Projects() {
           className={style.backgroundItem + " w-1/5 md:w-50"}
           style={{ top: "60%", left: "40%", transform: "rotateZ(-15deg)" }}
         >
-            <Image src="/pictures/projects/javascript.png" width={300} height={300} />
+          <Image
+            alt="javascriptPicture"
+            src="/pictures/projects/javascript.png"
+            width={300}
+            height={300}
+          />
         </Parallax>
         <Parallax
           percentage={0.9}
@@ -148,16 +185,21 @@ function Projects() {
           className={style.backgroundItem + " w-1/5 md:w-50"}
           style={{ top: "35%", right: "15%", transform: "rotateZ(12deg)" }}
         >
-          <Image src="/pictures/projects/antd.png" width={300} height={300} />
+          <Image
+            alt="antdPicture"
+            src="/pictures/projects/antd.png"
+            width={300}
+            height={300}
+          />
         </Parallax>
       </div>
       <div className="h-full w-full flex flex-col">
-        <div className="text-4xl px-4 mt-10 mb-10">Projects</div>
-        <div className="hidden md:grid grid-cols-2 grid-rows-2 px-4 justify-items-center items-center h-full w-full gap-4 mb-6">
+        <div className="text-5xl md:text-7xl px-4 mt-10 mb-10">Projects</div>
+        <div className="hidden md:grid grid-cols-2 grid-rows-2 px-4 justify-items-center items-center h-full w-full gap-8 mb-6 opacity-90">
           {PROJECTS.map((p, index) => makeCard(p, index))}
         </div>
         <div className="grid md:hidden px-4 h-full w-full gap-4 mb-6">
-          {PROJECTS.map((p, index) => makeList(p))}
+          {PROJECTS.map((p) => makeList(p))}
         </div>
       </div>
     </div>
