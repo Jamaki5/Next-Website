@@ -22,7 +22,7 @@ const TIMELINE = [
     school: "Otto-von-Guericke University",
     icon: <QueryBuilderIcon />,
     iconColor: "bg-blue-400",
-    content: null,
+    content: "Gut und so",
   },
   {
     time: "2012 - 2017",
@@ -31,7 +31,7 @@ const TIMELINE = [
     school: "Marie-Curie Gymnasium",
     icon: <CheckCircleIcon />,
     iconColor: "bg-green-400",
-    content: null,
+    content: "Gut und so",
   },
 ];
 
@@ -85,17 +85,36 @@ function AboutMe() {
       <div className={style.background}></div>
       <div className="w-full h-full flex flex-col">
         <div className="text-5xl md:text-7xl px-4 mt-10 mb-10">About Me</div>
-        <div className="hidden md:grid grid-cols-5 grid-rows-2 px-4 gap-4 h-full w-full">
-          <div className="bg-white bg-opacity-20 h-full w-full rounded col-start-1 col-end-3">
-            hi
+        <div className="hidden md:grid grid-cols-5 px-4 gap-4 h-full w-full">
+          <div className="self-center w-full col-start-1 col-end-3 gap-4">
+            <div className="bg-white bg-opacity-10 rounded p-4 text-lg">
+              Mein Name ist Jann-Marten Kias. Bereits in jungen Jahren habe ich
+              durch meine Leidenschaft als Gamer mich mit Technik beschäftigt.
+              Aktuell studiere ich an der Otto-von-Guericke Universität
+              Informatik im Bachelor. Während meines Studiums habe ich bereits
+              diverse Fächer absolviert. Dazu zählen: Machine Learning, Deep
+              Learning, Grundlagen der C++ Programmierung und viele Weitere. Zum
+              jetztigen Zeitpunkt suche ich ein Praktikum um meinen Bachelor
+              abschließen zu können.
+              <br />
+              <br />
+              In meinem Studium und in eigenen Projekten habe ich mir Kenntnisse
+              in verschiedenen Bereichen der Software Entwicklung angeeignet.
+              Aktuell befasse ich mich mit Frontend und etwas
+              Backend-Entwicklung. Dafür nutze ich Next.js, GraphQl und Apollo.
+              Für Versionierung und einfaches Deployment benutze ich Git und
+              Docker.
+            </div>
           </div>
-          <div className="grid bg-white bg-opacity-20 h-full w-full col-start-3 col-end-6 row-start-1 row-end-3 items-center">
+          <div
+            data-aos="fade-left"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-duration="500"
+            className="grid h-full w-full col-start-3 col-end-6 items-center"
+          >
             <Timeline align="alternate">
               {TIMELINE.map((item, index) => makeTimelineItem(item, index))}
             </Timeline>
-          </div>
-          <div className="bg-white bg-opacity-20 h-full w-full rounded col-start-1 col-end-3">
-            hi
           </div>
         </div>
       </div>

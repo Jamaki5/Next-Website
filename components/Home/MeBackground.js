@@ -43,7 +43,7 @@ function MeBackground() {
         <div>] = &nbsp;</div>
         <div className={style.functionColor}>useState</div>
         <div>(</div>
-        <div className={style.numberColor}>{offsetY}</div>
+        <div className={style.numberColor}>{Math.round(offsetY)}</div>
         <div>)</div>
       </Parallax>
       <Parallax

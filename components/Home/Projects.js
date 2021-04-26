@@ -134,12 +134,12 @@ function Projects() {
         key={name}
         data-aos="zoom-in"
         data-aos-offset="100"
-        className="h-auto w-full rounded bg-white bg-opacity-20 p-2"
+        className="h-auto w-full rounded bg-white bg-opacity-10 p-2"
       >
         <div className="h-full w-full grid grid-cols-4 justify-items-center items-center">
           <div className="col-start-1 col-end-3 grid justify-self-start">
             <div className="text-2xl">{name}</div>
-            <div className="text-xl">{description}</div>
+            <div className="text-large">{description}</div>
           </div>
           <div className="w-5/6 bg-blue-500 rounded hover:shadow-md duration-200 col-start-3 col-end-5">
             {getLink(link)}
