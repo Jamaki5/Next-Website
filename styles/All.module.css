@@ -1,11 +1,28 @@
+.backgroundColor {
+  background-color: rgb(30, 30, 30);
+}
+
 .page {
   min-height: 100vh;
   position: relative;
   display: grid;
   width: 100%;
-  overflow: hidden;
-  background-color: rgb(30, 30, 30);
   color: whitesmoke;
+}
+
+.contact {
+  position: relative;
+  display: grid;
+  width: 100%;
+  color: whitesmoke;
+}
+
+.link {
+  @apply text-blue-400 hover:text-blue-300 border-opacity-0 hover:border-opacity-100 border-b border-blue-300;
+}
+
+.icon {
+  @apply hover:text-blue-300;
 }
 
 .background {
@@ -51,15 +68,20 @@
   color: #b5cea8;
 }
 
-.reactPicture{
+.PasswordImportant{
+  color: white !important;
+  font-size: large !important;
+}
+
+.reactPicture {
   animation: rotate 20s infinite linear;
 }
 
-@keyframes rotate{
-  0%{
+@keyframes rotate {
+  0% {
     transform: rotateZ(0deg);
   }
-  100%{
+  100% {
     transform: rotateZ(360deg);
   }
 }

@@ -6,6 +6,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import BuildIcon from "@material-ui/icons/Build";
 import MailIcon from "@material-ui/icons/Mail";
 
+import style from "../styles/All.module.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
@@ -51,7 +52,9 @@ function Layout({ children }) {
       </div>
       <Nav collapsed={collapsed} links={LINKS} setCollapsed={setCollapsed} />
       <div className="min-h-screen md:ml-16">
-        {children}
+        <div className={ style.backgroundColor}>
+          {children}
+        </div>
         <Footer />
       </div>
     </>
