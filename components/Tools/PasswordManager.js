@@ -1,11 +1,9 @@
 import { useState } from "react";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 
 import FileCopyIcon from "@material-ui/icons/FileCopy";
-
-import style from "../../styles/All.module.css";
 
 const RandomChars =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@§$%&()=[]{}#+-*/,.";
@@ -48,37 +46,90 @@ function PasswordManager() {
   };
 
   return (
-    <div className="flex flex-col self-center w-2/3 h-full px-4 bg-white bg-opacity-10 rounded">
+    <div className="flex flex-col self-center w-full md:max-w-md h-full px-4 bg-white bg-opacity-10 rounded place-self-center">
       <h2 className="text-2xl mt-2">Password Generator</h2>
-      <div className="grid w-full h-full grid-rows-3 grid-cols-3">
-        <OutlinedInput
-          className={
-            "col-span-3 h-2/5 self-center ring-white " + style.PasswordImportant
-          }
-          endAdornment={
-            <Tooltip
-              PopperProps={{
-                disablePortal: true,
-              }}
-              title={<div className="text-lg">Copied</div>}
-              arrow
-              open={open}
-              disableFocusListener
-              disableHoverListener
-              disableTouchListener
-              onClick={handleClick}
-              placement="top"
+      <div className="grid w-full h-full grid-rows-4 sm:grid-rows-3 grid-cols-2 sm:grid-cols-3">
+        <div className="flex col-span-2 sm:col-span-3 my-4 self-center rounded focus:border-gray-300 border-white border-2">
+          <input
+            className="bg-transparent w-full focus:outline-none pl-2"
+            value={password}
+            readOnly
+          />
+          <Tooltip
+            PopperProps={{
+              disablePortal: true,
+            }}
+            title={<div className="text-lg">Copied</div>}
+            arrow
+            open={open}
+            disableFocusListener
+            disableHoverListener
+            disableTouchListener
+            onClick={handleClick}
+            placement="top"
+          >
+            <IconButton
+              disableFocusRipple={true}
+              color="inherit"
+              className="focus:outline-none hover:text-gray-400"
             >
-              <IconButton
-                disableFocusRipple={true}
-                color="inherit"
-                className="focus:outline-none hover:text-gray-400"
-              >
-                <FileCopyIcon color="inherit" />
-              </IconButton>
-            </Tooltip>
-          }
-        />
+              <FileCopyIcon color="inherit" />
+            </IconButton>
+          </Tooltip>
+        </div>
+        <div className="col-span-2 sm:col-span-3 flex items-center">
+          <input
+            className="w-full"
+            type="range"
+            min="10"
+            max="50"
+            value={length}
+            onChange={(e) => {
+              setLength(e.target.value);
+            }}
+          />
+          <input
+            className="focus:outline-none border-white rounded border-2 bg-transparent text-white ml-2"
+            type="number"
+            value={length}
+            onChange={(e) => {
+              setLength(e.target.value);
+            }}
+            min="10"
+            max="50"
+          />
+        </div>
+        <div className="w-full flex place-items-center gap-2">
+          <input
+            type="checkbox"
+            value={special}
+            onChange={() => setSpecial(!special)}
+            checked={special}
+          />
+          <label>special Character</label>
+        </div>
+        <div className="w-full flex place-items-center gap-2">
+          <input
+            type="checkbox"
+            value={number}
+            onChange={() => setNumber(!number)}
+            checked={number}
+          />
+          <label>Numbers</label>
+        </div>
+        <div className="col-span-2 sm:col-span-1 w-full grid place-content-center">
+          <div className="bg-blue-400 rounded">
+            <Button
+            className="focus:outline-none"
+              color="inherit"
+              onClick={() => {
+                generatePassword();
+              }}
+            >
+              Generate
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );

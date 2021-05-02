@@ -68,11 +68,6 @@
   color: #b5cea8;
 }
 
-.PasswordImportant{
-  color: white !important;
-  font-size: large !important;
-}
-
 .reactPicture {
   animation: rotate 20s infinite linear;
 }
