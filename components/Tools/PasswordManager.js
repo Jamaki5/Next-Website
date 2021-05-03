@@ -9,6 +9,9 @@ const RandomChars =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@§$%&()=[]{}#+-*/,.";
 
 function PasswordManager() {
+  const minLength = 10;
+  const maxLength = 50;
+
   const [special, setSpecial] = useState(true);
   const [number, setNumber] = useState(true);
   const [password, setPassword] = useState("Generate a strong Password");
@@ -16,7 +19,7 @@ function PasswordManager() {
   const [open, setOpen] = useState(false);
 
   function generatePassword() {
-    if (length < 10 || length > 50) {
+    if (length < minLength || length > maxLength) {
       setPassword("Error: Length is not valid");
     } else {
       let pass = "";
@@ -45,6 +48,15 @@ function PasswordManager() {
     setTimeout(handleClose, 1000);
   };
 
+  function handleNumber(e) {
+    if (e.target.value > maxLength) {
+      setLength(maxLength);
+    }
+    if (e.target.value < minLength) {
+      setLength(minLength);
+    }
+  }
+
   return (
     <div className="flex flex-col self-center w-full md:max-w-md h-full px-4 bg-white bg-opacity-10 rounded place-self-center">
       <h2 className="text-2xl mt-2">Password Generator</h2>
@@ -54,6 +66,7 @@ function PasswordManager() {
             className="bg-transparent w-full focus:outline-none pl-2"
             value={password}
             readOnly
+            id="Password"
           />
           <Tooltip
             PopperProps={{
@@ -69,6 +82,7 @@ function PasswordManager() {
             placement="top"
           >
             <IconButton
+              aria-label="Copy"
               disableFocusRipple={true}
               color="inherit"
               className="focus:outline-none hover:text-gray-400"
@@ -77,27 +91,38 @@ function PasswordManager() {
             </IconButton>
           </Tooltip>
         </div>
-        <div className="col-span-2 sm:col-span-3 flex items-center">
-          <input
-            className="w-full"
-            type="range"
-            min="10"
-            max="50"
-            value={length}
-            onChange={(e) => {
-              setLength(e.target.value);
-            }}
-          />
-          <input
-            className="focus:outline-none border-white rounded border-2 bg-transparent text-white ml-2"
-            type="number"
-            value={length}
-            onChange={(e) => {
-              setLength(e.target.value);
-            }}
-            min="10"
-            max="50"
-          />
+        <div className="col-span-2 sm:col-span-3 grid items-center">
+          <div className="justify-self-start w-full flex flex-col">
+            <div className="text-lg">Length:</div>
+            <div className="text-sm">{`min: ${minLength}, max: ${maxLength}`}</div>
+          </div>
+          <div className="flex w-full">
+            <input
+              className="w-full"
+              type="range"
+              min={minLength}
+              max={maxLength}
+              value={length}
+              onChange={(e) => {
+                setLength(e.target.value);
+              }}
+              id="Slider"
+            />
+            <input
+              className="focus:outline-none border-white rounded border-2 bg-transparent text-white ml-2"
+              type="number"
+              value={length}
+              onChange={(e) => {
+                setLength(Math.round(e.target.value));
+              }}
+              onBlur={(e) => {
+                handleNumber(e);
+              }}
+              min={minLength}
+              max={maxLength}
+              id="Number"
+            />
+          </div>
         </div>
         <div className="w-full flex place-items-center gap-2">
           <input
@@ -105,8 +130,9 @@ function PasswordManager() {
             value={special}
             onChange={() => setSpecial(!special)}
             checked={special}
+            id="Special checked"
           />
-          <label>special Character</label>
+          <label htmlFor="Special checked">special Character</label>
         </div>
         <div className="w-full flex place-items-center gap-2">
           <input
@@ -114,13 +140,15 @@ function PasswordManager() {
             value={number}
             onChange={() => setNumber(!number)}
             checked={number}
+            id="Number checked"
           />
-          <label>Numbers</label>
+          <label htmlFor="Number checked">Numbers</label>
         </div>
         <div className="col-span-2 sm:col-span-1 w-full grid place-content-center">
           <div className="bg-blue-400 rounded">
             <Button
-            className="focus:outline-none"
+              key="Password Generate Button"
+              className="focus:outline-none"
               color="inherit"
               onClick={() => {
                 generatePassword();
