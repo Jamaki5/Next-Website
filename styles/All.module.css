@@ -18,7 +18,7 @@
 }
 
 .link {
-  @apply text-blue-400 hover:text-blue-300 border-opacity-0 hover:border-opacity-100 border-b border-blue-300;
+  @apply text-blue-400 hover:text-blue-300;
 }
 
 .icon {

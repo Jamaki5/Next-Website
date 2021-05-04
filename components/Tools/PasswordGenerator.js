@@ -2,8 +2,23 @@ import { useState } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import dynamic from "next/dynamic";
 
 import FileCopyIcon from "@material-ui/icons/FileCopy";
+
+const CssSlider = dynamic(() => import("../Custom/Slider"), {
+  ssr: false,
+});
+
+const CssTextField = dynamic(() => import("../Custom/InputField"), {
+  ssr: false,
+});
+
+const CssCheckbox = dynamic(() => import("../Custom/Checkbox"), {
+  ssr: false,
+});
 
 const RandomChars =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@§$%&()=[]{}#+-*/,.";
@@ -48,14 +63,17 @@ function PasswordManager() {
     setTimeout(handleClose, 1000);
   };
 
-  function handleNumber(e) {
-    if (e.target.value > maxLength) {
+  const handleInputChange = (event) => {
+    setLength(event.target.value === "" ? 0 : Number(event.target.value));
+  };
+
+  const handleBlur = () => {
+    if (length < minLength) {
+      setLength(minLength);
+    } else if (length > maxLength) {
       setLength(maxLength);
     }
-    if (e.target.value < minLength) {
-      setLength(minLength);
-    }
-  }
+  };
 
   return (
     <div className="flex flex-col self-center w-full md:max-w-md h-full px-4 bg-white bg-opacity-10 rounded place-self-center">
@@ -92,57 +110,53 @@ function PasswordManager() {
           </Tooltip>
         </div>
         <div className="col-span-2 sm:col-span-3 grid items-center">
-          <div className="justify-self-start w-full flex flex-col">
-            <div className="text-lg">Length:</div>
-            <div className="text-sm">{`min: ${minLength}, max: ${maxLength}`}</div>
-          </div>
-          <div className="flex w-full">
-            <input
-              className="w-full"
-              type="range"
-              min={minLength}
-              max={maxLength}
+          <div className="flex w-full gap-4">
+            <CssSlider
+              className="w-full self-center"
               value={length}
-              onChange={(e) => {
-                setLength(e.target.value);
+              min={minLength}
+              step={1}
+              max={maxLength}
+              onChange={(event, newValue) => {
+                setLength(newValue);
               }}
-              id="Slider"
+              valueLabelDisplay="auto"
+              aria-labelledby="Slider"
             />
-            <input
-              className="focus:outline-none border-white rounded border-2 bg-transparent text-white ml-2"
-              type="number"
+            <CssTextField
               value={length}
-              onChange={(e) => {
-                setLength(Math.round(e.target.value));
-              }}
-              onBlur={(e) => {
-                handleNumber(e);
-              }}
-              min={minLength}
-              max={maxLength}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              label="Length"
               id="Number"
+              inputProps={{
+                step: 1,
+                min: { minLength },
+                max: { maxLength },
+                type: "number",
+              }}
+              variant="outlined"
+              size="small"
             />
           </div>
         </div>
         <div className="w-full flex place-items-center gap-2">
-          <input
-            type="checkbox"
+          <CssCheckbox
             value={special}
             onChange={() => setSpecial(!special)}
             checked={special}
             id="Special checked"
           />
-          <label htmlFor="Special checked">special Character</label>
+          <label>Special Character</label>
         </div>
         <div className="w-full flex place-items-center gap-2">
-          <input
-            type="checkbox"
+          <CssCheckbox
             value={number}
             onChange={() => setNumber(!number)}
             checked={number}
-            id="Number checked"
+            id="Number"
           />
-          <label htmlFor="Number checked">Numbers</label>
+          <label>Numbers</label>
         </div>
         <div className="col-span-2 sm:col-span-1 w-full grid place-content-center">
           <div className="bg-blue-400 rounded">

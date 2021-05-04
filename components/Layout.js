@@ -39,6 +39,7 @@ function Layout({ children }) {
       <Head>
         <title>Jann-Marten Kias</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <div className="md:hidden fixed z-50 left-3 top-3 h-10 w-10 bg-black bg-opacity-40 rounded">
         <IconButton
