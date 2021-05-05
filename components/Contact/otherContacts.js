@@ -8,11 +8,6 @@ import style from "../../styles/All.module.css";
 
 const CONTACTS = [
   {
-    name: "Github",
-    link: "https://github.com/Jamaki5",
-    icon: <GitHubIcon fontSize="inherit" />,
-  },
-  {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/jann-marten-kias-048139203/",
     icon: <LinkedInIcon fontSize="inherit" />,
@@ -24,7 +19,7 @@ const CONTACTS = [
   },
 ];
 
-function Contact() {
+function otherContacts() {
   function ReturnContact({ name, link, icon }) {
     return (
       <a
@@ -49,27 +44,11 @@ function Contact() {
 
   return (
     <div className={style.contact}>
-      <div className={`grid my-6 grid-cols-2 sm:grid-cols-${CONTACTS.length + 1} px-4 gap-4 md:w-2/3 justify-self-center text-2xl`}>
+      <div className={`grid my-6 grid-cols-2 sm:grid-cols-${CONTACTS.length} px-4 gap-4 md:w-2/3 justify-self-center text-2xl`}>
         {CONTACTS.map((c) => ReturnContact(c))}
-
-        <div className="grid items-center justify-items-center">
-          <Link href="/contact">
-            <div
-              className={
-                "grid items-center justify-items-center cursor-pointer " +
-                style.icon
-              }
-            >
-              <div className="text-6xl">
-                <MailIcon fontSize="inherit" />
-              </div>
-              <div>E-Mail</div>
-            </div>
-          </Link>
-        </div>
       </div>
     </div>
   );
 }
 
-export default Contact;
+export default otherContacts;

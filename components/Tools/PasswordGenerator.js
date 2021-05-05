@@ -90,7 +90,7 @@ function PasswordManager() {
             PopperProps={{
               disablePortal: true,
             }}
-            title={<div className="text-lg">Copied</div>}
+            title={<div className="text-base">Copied</div>}
             arrow
             open={open}
             disableFocusListener
