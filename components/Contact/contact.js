@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import Button from "@material-ui/core/Button";
-import Recaptcha from "react-recaptcha";
 
 import ContactMe from "./otherContacts";
 import style from "../../styles/All.module.css";
@@ -10,71 +9,82 @@ const CssTextField = dynamic(() => import("../Custom/InputField"), {
   ssr: false,
 });
 
-let recaptchaInstance;
+const HCaptcha = dynamic(() => import("./hCaptcha"), {
+  ssr: false,
+});
+
+const theme = {
+  primary: "#60A5FA",
+  hover: "#93C5FD",
+  color: "white",
+  nofocus: "white",
+};
+
+const themeError = {
+  primary: "#B91C1C",
+  hover: "#F87171",
+  color: "#B91C1C",
+  nofocus: "#B91C1C",
+};
 
 function contact() {
   const [email, setEmail] = useState({
     name: "",
     address: "",
     message: "",
-    valid: false,
+  });
+  const [error, setError] = useState({
     errorName: "",
     errorMessage: "",
     errorAddress: "",
     errorValid: "",
   });
+  const [token, setToken] = useState("");
+  const captcha = useRef(null);
 
   const handleEmail = () => {};
 
   const handleSend = () => {
-    alert(
-      email.name +
-        " " +
-        email.address +
-        " " +
-        email.message +
-        " " +
-        email.valid +
-        " " +
-        email.errorName +
-        " " +
-        email.errorAddress +
-        " " +
-        email.errorMessage +
-        " " +
-        email.errorValid
-    );
+    let eName = "";
+    let eMessage = "";
+    let eAddress = "";
+    let eValid = "";
+
     if (email.name === "") {
-      setEmail({
-        ...email,
-        errorName: "The Name can't be empty.",
-      });
-      return;
+      eName = "The Namefield can't be empty.";
     }
+
     if (email.message.length < 10 || email.message.length > 255) {
-      setEmail({
-        ...email,
-        error:
-          "Your Message is incorrect. The length of the message has to be between 10 and 255.",
+      eMessage = "The length of the message must be between 10 and 255.";
+    }
+
+    if (token === "") {
+      eValid = "Please check the Captcha.";
+    }
+
+    setError({
+      errorName: eName,
+      errorMessage: eMessage,
+      errorAddress: eAddress,
+      errorValid: eValid,
+    });
+
+    if (!eName && !eMessage && !eAddress && !eValid) {
+      alert("Success");
+      fetch("http://localhost:3000/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "aplication/s",
+        },
+        body: JSON.stringify({
+          name: email.name,
+          email: email.address,
+          message: email.message,
+          token: token,
+        }),
       });
-      return;
+      captcha.current.resetCaptcha;
     }
-    if (email.valid) {
-      recaptchaInstance.reset();
-      handleEmail;
-    }
-  };
-
-  const callback = () => {
-    console.log("reCaptcha loaded.");
-  };
-
-  const handleVerify = () => {
-    setEmail({ ...email, valid: true });
-  };
-
-  const handleExpired = () => {
-    setEmail({ ...email, valid: false });
   };
 
   return (
@@ -93,10 +103,11 @@ function contact() {
               Jann-Marten.Kias@web.de
             </a>
           </div>
-          <div className="flex w-full self-center gap-4">
+          <div className="flex flex-col sm:flex-row w-full self-center gap-4">
             <div className="w-full">
               <CssTextField
-                label="Name / Company"
+                theme={error.errorName ? themeError : theme}
+                label={error.errorName ? error.errorName : "Name / Company"}
                 variant="outlined"
                 fullWidth
                 id="name"
@@ -108,7 +119,8 @@ function contact() {
             </div>
             <div className="w-full">
               <CssTextField
-                label="E-Mail"
+                theme={error.errorAddress ? themeError : theme}
+                label={error.errorAddress ? error.errorAddress : "E-Mail"}
                 variant="outlined"
                 fullWidth
                 id="e-mail"
@@ -122,7 +134,8 @@ function contact() {
           </div>
           <div>
             <CssTextField
-              label="Message"
+              theme={error.errorMessage ? themeError : theme}
+              label={error.errorMessage ? error.errorMessage : "Message"}
               variant="outlined"
               fullWidth
               id="message"
@@ -134,21 +147,18 @@ function contact() {
               }}
             />
           </div>
-          <div className="grid sm:grid-cols-2 place-content-center mx-4 mb-4">
+          <div className="grid sm:grid-cols-3 place-content-center mb-4 px-4 gap-4">
             <div className="place-self-center">
-              <Recaptcha
-                ref={(e) => (recaptchaInstance = e)}
-                sitekey="6LeAPccaAAAAAODY5TP-NVifHMHXg0ASLqq1jMBw"
-                render="explicit"
-                onloadCallback={callback}
-                verifyCallback={handleVerify}
-                theme="dark"
-                expiredCallback={handleExpired}
-              />
+              <HCaptcha setToken={setToken} ref={captcha} />
             </div>
+            <div className="place-self-center text-red-700">{error.errorValid}</div>
             <div className="bg-blue-400 rounded place-self-center">
-              <Button className="focus:outline-none" onClick={handleSend}>
-                Send
+              <Button
+                color="inherit"
+                className="focus:outline-none"
+                onClick={handleSend}
+              >
+                <div className="text-lg">Send</div>
               </Button>
             </div>
           </div>
