@@ -13,20 +13,6 @@ const HCaptcha = dynamic(() => import("./hCaptcha"), {
   ssr: false,
 });
 
-const theme = {
-  primary: "#60A5FA",
-  hover: "#93C5FD",
-  color: "white",
-  nofocus: "white",
-};
-
-const themeError = {
-  primary: "#B91C1C",
-  hover: "#F87171",
-  color: "#B91C1C",
-  nofocus: "#B91C1C",
-};
-
 function contact() {
   const [email, setEmail] = useState({
     name: "",
@@ -106,8 +92,7 @@ function contact() {
           <div className="flex flex-col sm:flex-row w-full self-center gap-4">
             <div className="w-full">
               <CssTextField
-                theme={error.errorName ? themeError : theme}
-                label={error.errorName ? error.errorName : "Name / Company"}
+                label="Name / Company"
                 variant="outlined"
                 fullWidth
                 id="name"
@@ -119,8 +104,7 @@ function contact() {
             </div>
             <div className="w-full">
               <CssTextField
-                theme={error.errorAddress ? themeError : theme}
-                label={error.errorAddress ? error.errorAddress : "E-Mail"}
+                label="E-Mail"
                 variant="outlined"
                 fullWidth
                 id="e-mail"
@@ -134,8 +118,7 @@ function contact() {
           </div>
           <div>
             <CssTextField
-              theme={error.errorMessage ? themeError : theme}
-              label={error.errorMessage ? error.errorMessage : "Message"}
+              label="Message"
               variant="outlined"
               fullWidth
               id="message"
@@ -151,7 +134,12 @@ function contact() {
             <div className="place-self-center">
               <HCaptcha setToken={setToken} ref={captcha} />
             </div>
-            <div className="place-self-center text-red-700">{error.errorValid}</div>
+            <div className="place-self-center text-red-700">
+              {error.errorName ? <div>{error.errorName} <br/></div> : ""}
+              {error.errorAddress ? <div>{error.errorAddress} <br/></div> : ""}
+              {error.errorMessage ? <div>{error.errorMessage} <br/></div> : ""}
+              {error.errorValid ? <div>{error.errorValid} <br/></div> : ""}
+            </div>
             <div className="bg-blue-400 rounded place-self-center">
               <Button
                 color="inherit"

@@ -2,8 +2,6 @@ import { useState } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import dynamic from "next/dynamic";
 
 import FileCopyIcon from "@material-ui/icons/FileCopy";
@@ -19,6 +17,13 @@ const CssTextField = dynamic(() => import("../Custom/InputField"), {
 const CssCheckbox = dynamic(() => import("../Custom/Checkbox"), {
   ssr: false,
 });
+
+const theme = {
+  primary: "#60A5FA",
+  hover: "#93C5FD",
+  color: "white",
+  nofocus: "white",
+};
 
 const RandomChars =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@§$%&()=[]{}#+-*/,.";
@@ -123,20 +128,15 @@ function PasswordManager() {
               valueLabelDisplay="auto"
               aria-labelledby="Slider"
             />
-            <CssTextField
+            <input
+              className=" text-lg bg-transparent border-white border-2 rounded outline-none p-1 hover:border-blue-300 focus:border-blue-400"
               value={length}
-              onChange={handleInputChange}
-              onBlur={handleBlur}
-              label="Length"
+              onChange={(event) => handleInputChange(event)}
+              onBlur={() => handleBlur()}
               id="Number"
-              inputProps={{
-                step: 1,
-                min: { minLength },
-                max: { maxLength },
-                type: "number",
-              }}
-              variant="outlined"
-              size="small"
+              min={minLength}
+              max={maxLength}
+              type="number"
             />
           </div>
         </div>
