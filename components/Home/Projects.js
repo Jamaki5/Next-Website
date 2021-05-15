@@ -104,7 +104,7 @@ function Projects() {
   function makeCard({ name, description, picture, link }, index) {
     return (
       <div
-        className="w-5/6"
+        className="w-full max-w-xl"
         data-aos="fade-up"
         data-aos-delay={(index % 2) * 200}
         data-aos-offset="100"

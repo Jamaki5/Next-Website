@@ -1,15 +1,12 @@
 import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import Button from "@material-ui/core/Button";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 import ContactMe from "./otherContacts";
 import style from "../../styles/All.module.css";
 
 const CssTextField = dynamic(() => import("../Custom/InputField"), {
-  ssr: false,
-});
-
-const HCaptcha = dynamic(() => import("./hCaptcha"), {
   ssr: false,
 });
 
@@ -26,9 +23,11 @@ function contact() {
     errorValid: "",
   });
   const [token, setToken] = useState("");
-  const captcha = useRef(null);
+  const captcha = useRef()
 
-  const handleEmail = () => {};
+  const handleExpire = () => {
+    setToken("");
+  };
 
   const handleSend = () => {
     let eName = "";
@@ -42,6 +41,16 @@ function contact() {
 
     if (email.message.length < 10 || email.message.length > 255) {
       eMessage = "The length of the message must be between 10 and 255.";
+    }
+
+    if (email.name.trim() === "") {
+      eName = "Your Name can't be empty.";
+    }
+    if (email.address.trim() === "") {
+      eAddress = "Your E-Mailaddress can't be empty.";
+    }
+    if (email.message.trim() === "") {
+      eMessage = "Your Message can't be empty.";
     }
 
     if (token === "") {
@@ -69,7 +78,7 @@ function contact() {
           token: token,
         }),
       });
-      captcha.current.resetCaptcha;
+      captcha.current.resetCaptcha();
     }
   };
 
@@ -92,7 +101,8 @@ function contact() {
           <div className="flex flex-col sm:flex-row w-full self-center gap-4">
             <div className="w-full">
               <CssTextField
-                label="Name / Company"
+                label="Name"
+                placeholder="Your Name or Company"
                 variant="outlined"
                 fullWidth
                 id="name"
@@ -105,6 +115,7 @@ function contact() {
             <div className="w-full">
               <CssTextField
                 label="E-Mail"
+                placeholder="Your E-Mailaddress"
                 variant="outlined"
                 fullWidth
                 id="e-mail"
@@ -119,6 +130,7 @@ function contact() {
           <div>
             <CssTextField
               label="Message"
+              placeholder="Your Message"
               variant="outlined"
               fullWidth
               id="message"
@@ -132,15 +144,48 @@ function contact() {
           </div>
           <div className="grid sm:grid-cols-3 place-content-center mb-4 px-4 gap-4">
             <div className="place-self-center">
-              <HCaptcha setToken={setToken} ref={captcha} />
+              <HCaptcha
+                languageOverride="en"
+                size="compact"
+                ref={captcha}
+                sitekey="bdab9799-79eb-45cf-87bc-3cce75546476"
+                onVerify={(token, ekey) => setToken(token)}
+                theme="dark"
+                onExpire={handleExpire}
+                host="test.mydomain.com"
+              />
             </div>
-            <div className="place-self-center text-red-700">
-              {error.errorName ? <div>{error.errorName} <br/></div> : ""}
-              {error.errorAddress ? <div>{error.errorAddress} <br/></div> : ""}
-              {error.errorMessage ? <div>{error.errorMessage} <br/></div> : ""}
-              {error.errorValid ? <div>{error.errorValid} <br/></div> : ""}
+            <div className="place-self-center text-red-600">
+              {error.errorName ? (
+                <div>
+                  {error.errorName} <br />
+                </div>
+              ) : (
+                ""
+              )}
+              {error.errorAddress ? (
+                <div>
+                  {error.errorAddress} <br />
+                </div>
+              ) : (
+                ""
+              )}
+              {error.errorMessage ? (
+                <div>
+                  {error.errorMessage} <br />
+                </div>
+              ) : (
+                ""
+              )}
+              {error.errorValid ? (
+                <div>
+                  {error.errorValid} <br />
+                </div>
+              ) : (
+                ""
+              )}
             </div>
-            <div className="bg-blue-400 rounded place-self-center">
+            <div className="bg-blue-400 rounded place-self-center hover:shadow-md">
               <Button
                 color="inherit"
                 className="focus:outline-none"

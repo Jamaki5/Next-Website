@@ -22,7 +22,8 @@ const TIMELINE = [
     school: "Otto-von-Guericke University",
     icon: <QueryBuilderIcon />,
     iconColor: "bg-blue-400",
-    content: "Gut und so",
+    content:
+      "In meinem Informatik Studium habe ich von grundlegenden Prinzipien, wie Algorhytmen und Datenstrukturen, bis hin zu maschinellem Lernen, Neuronale Netze und sicherheitstechnische Konzepte.",
   },
   {
     time: "2012 - 2017",
@@ -31,7 +32,8 @@ const TIMELINE = [
     school: "Marie-Curie Gymnasium",
     icon: <CheckCircleIcon />,
     iconColor: "bg-green-400",
-    content: "Gut und so",
+    content:
+      "Bereits in der Schule habe ich großes Interesse an Informatik gehabt, welches von meinem Hobby als Gamer gefördert wurde. Zu dieser Zeit habe ich hauptsächlich die technischen Grundlagen eines PCs mir angeschaut.",
   },
 ];
 
@@ -71,7 +73,7 @@ function AboutMe() {
                 <div className="text-base">
                   <SchoolIcon /> {item.school}
                 </div>
-                <div className="text-base">{item.content}</div>
+                <div className="text-base text-left">{item.content}</div>
               </div>
             </div>
           </div>
@@ -82,11 +84,42 @@ function AboutMe() {
 
   return (
     <div className={style.page}>
-      <div className={style.background}></div>
+      <div className={style.background}>
+        <Parallax
+          percentage={0.9}
+          speed={4}
+          className={style.backgroundItem}
+          style={{ top: "20%", right: "15%", transform: "rotateZ(20deg)" }}
+        >
+          <div className="text-white">
+            <LocationOnIcon />
+          </div>
+          <div className={style.constColor}>&nbsp;Magdeburg</div>
+        </Parallax>
+        <Parallax
+          percentage={0.9}
+          speed={5}
+          className={style.backgroundItem}
+          style={{ top: "45%", left: "20%", transform: "rotateZ(-15deg)" }}
+        >
+          &#123;
+          <div className={style.varColor}>age:&nbsp;</div>
+          <div className={style.numberColor}>22</div>
+          &#125;
+        </Parallax>
+        <Parallax
+          percentage={0.9}
+          speed={6}
+          className={style.backgroundItem}
+          style={{ top: "60%", left: "35%", transform: "rotateZ(5deg)" }}
+        >
+          <div className={style.constColor}>Webdeveloper</div>
+        </Parallax>
+      </div>
       <div className="w-full h-full flex flex-col">
         <div className="text-5xl md:text-7xl px-4 mt-10 mb-10">About Me</div>
-        <div className="hidden md:grid grid-cols-5 px-4 gap-4 h-full w-full">
-          <div className="self-center w-full col-start-1 col-end-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-5 px-4 gap-4 h-full w-full">
+          <div className="self-center w-full col-span-1 lg:col-span-2 gap-4 max-w-2xl justify-self-center">
             <div className="bg-white bg-opacity-10 rounded p-4 text-lg">
               Mein Name ist Jann-Marten Kias. Bereits in jungen Jahren habe ich
               durch meine Leidenschaft als Gamer mich mit Technik beschäftigt.
@@ -110,7 +143,7 @@ function AboutMe() {
             data-aos="fade-left"
             data-aos-anchor-placement="center-bottom"
             data-aos-duration="500"
-            className="grid h-full w-full col-start-3 col-end-6 items-center"
+            className="hidden lg:grid h-full w-full col-span-3 items-center max-w-3xl justify-self-center"
           >
             <Timeline align="alternate">
               {TIMELINE.map((item, index) => makeTimelineItem(item, index))}

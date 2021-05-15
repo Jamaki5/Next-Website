@@ -32,7 +32,14 @@ const CssTextField = withStyles({
 })(TextField);
 
 function InputField(props) {
-  return <CssTextField {...props} />;
+  return (
+    <CssTextField
+      {...props}
+      InputLabelProps={{
+        shrink: true,
+      }}
+    />
+  );
 }
 
 export default InputField;
