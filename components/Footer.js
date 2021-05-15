@@ -8,11 +8,11 @@ function Footer() {
       <div className="mb-4 mt-6">© 2021 Jann-Marten Kias</div>
       <div className="flex mb-8">
         <div className={style.link}>
-          <Link href="/datenschutz">Datenschutz</Link>
+          <Link href="/privacy_policy">Privacy Policy</Link>
         </div>
         &nbsp;|&nbsp;
         <div className={style.link}>
-          <Link href="/impressum">Impressum</Link>
+          <Link href="/imprint">Imprint</Link>
         </div>
         &nbsp;|&nbsp;
         <div className={style.link}>
