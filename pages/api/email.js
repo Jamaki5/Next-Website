@@ -2,23 +2,22 @@ import { verify } from "hcaptcha";
 
 export default async (req, res) => {
   const HCAPTCHAKEY = process.env.H_CAPTCHA_KEY;
-  let body = "";
-  let token = 0;
-  let status = 200;
-  let message = {
-    valid: true,
-  };
+  let token = "";
+  let body;
 
-  if (req?.body) {
-    body = JSON.parse(req.body);
-  } else {
-    status = 400;
-    message = { error: "No Body" };
-    return;
-  }
-
-  if (body?.token) {
-    token = body.token;
+  try {
+    if (
+      req.headers ===
+      {
+        "Content-Type": "application/json",
+      }
+    ) {
+      body = JSON.parse(body);
+      token = body.token;
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(400).json({ error: e });
   }
 
   try {
@@ -27,18 +26,12 @@ export default async (req, res) => {
     if (success) {
       console.log("success");
     } else {
-      status = 400;
-      message = {
-        error: "The Token is not valid",
-      };
+      res.status(400).json({ error: "token is not valid" });
     }
   } catch (e) {
     console.log(e);
-    status = 400;
-    message = {
-      error: "Error",
-    };
+    res.status(400).json({ error: e });
   }
 
-  res.status(status).json(message);
+  res.json({ success: true });
 };

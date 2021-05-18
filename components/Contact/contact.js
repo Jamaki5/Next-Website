@@ -66,10 +66,10 @@ function contact() {
 
     if (!eName && !eMessage && !eAddress && !eValid) {
       alert("Success");
-      fetch("http://localhost:3000/api/email", {
+      fetch("/api/email", {
         method: "POST",
         headers: {
-          "Content-Type": "aplication/s",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: email.name,
