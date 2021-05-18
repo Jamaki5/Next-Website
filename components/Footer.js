@@ -19,7 +19,7 @@ function Footer() {
           <Link href="/contact">Contact</Link>
         </div>
       </div>
-      <div className="mb-8">
+      <div className="mb-8 text-center">
         powered by&nbsp;
         <a
           className={style.link}
