@@ -6,6 +6,8 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 import ContactMe from "./otherContacts";
 import style from "../../styles/All.module.css";
 
+const regrexEmail = new RegExp("[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+");
+
 const CssTextField = dynamic(() => import("../Custom/InputField"), {
   ssr: false,
 });
@@ -23,7 +25,7 @@ function contact() {
     errorValid: "",
   });
   const [token, setToken] = useState("");
-  const captcha = useRef()
+  const captcha = useRef();
 
   const handleExpire = () => {
     setToken("");
@@ -55,6 +57,10 @@ function contact() {
 
     if (token === "") {
       eValid = "Please check the Captcha.";
+    }
+
+    if (!regrexEmail.test(email.address)) {
+      eAddress = "Your Email is not valid.";
     }
 
     setError({
