@@ -12,6 +12,7 @@
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
+    "@sendgrid/mail": "^7.4.4",
     "aos": "^2.3.4",
     "hcaptcha": "0.0.2",
     "next": "10.1.3",
