@@ -74,21 +74,21 @@ function privacy_policy() {
             </p>
 
             <ul>
-              <li>&#8226;Provide, operate, and maintain our website</li>
-              <li>&#8226;Improve, personalize, and expand our website</li>
-              <li>&#8226;Understand and analyze how you use our website</li>
+              <li>&#8226; Provide, operate, and maintain our website</li>
+              <li>&#8226; Improve, personalize, and expand our website</li>
+              <li>&#8226; Understand and analyze how you use our website</li>
               <li>
-                &#8226;Develop new products, services, features, and
+                &#8226; Develop new products, services, features, and
                 functionality
               </li>
               <li>
-                &#8226;Communicate with you, either directly or through one of
+                &#8226; Communicate with you, either directly or through one of
                 our partners, including for customer service, to provide you
                 with updates and other information relating to the website, and
                 for marketing and promotional purposes
               </li>
-              <li>&#8226;Send you emails</li>
-              <li>&#8226;Find and prevent fraud</li>
+              <li>&#8226; Send you emails</li>
+              <li>&#8226; Find and prevent fraud</li>
             </ul>
 
             <h2 className="text-2xl font-semibold mt-4">Log Files</h2>

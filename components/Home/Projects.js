@@ -186,8 +186,8 @@ function Projects() {
           style={{ top: "35%", right: "15%", transform: "rotateZ(12deg)" }}
         >
           <Image
-            alt="antdPicture"
-            src="/pictures/projects/antd.png"
+            alt="material-uiPicture"
+            src="/pictures/projects/material-ui.png"
             width={300}
             height={300}
           />
