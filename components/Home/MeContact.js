@@ -49,7 +49,8 @@ function Contact() {
 
   return (
     <div className={style.contact}>
-      <div className={`grid my-6 grid-cols-2 sm:grid-cols-${CONTACTS.length + 1} px-4 gap-4 md:w-2/3 justify-self-center text-2xl`}>
+      <div className="place-self-center max-w-7xl w-full">
+      <div className={`grid my-6 grid-cols-2 sm:grid-cols-${CONTACTS.length + 1} gap-4 text-2xl`}>
         {CONTACTS.map((c) => ReturnContact(c))}
 
         <div className="grid items-center justify-items-center">
@@ -67,6 +68,7 @@ function Contact() {
             </div>
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );

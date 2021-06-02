@@ -193,7 +193,7 @@ function Projects() {
           />
         </Parallax>
       </div>
-      <div className="h-full w-full flex flex-col">
+      <div className="h-full place-self-center max-w-7xl w-full flex flex-col">
         <div className="text-5xl md:text-7xl px-4 mt-10 mb-10">Projects</div>
         <div className="hidden md:grid grid-cols-2 grid-rows-2 px-4 justify-items-center items-center h-full w-full gap-8 mb-6 opacity-90">
           {PROJECTS.map((p, index) => makeCard(p, index))}
