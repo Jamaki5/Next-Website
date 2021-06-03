@@ -10,20 +10,9 @@ const CssSlider = dynamic(() => import("../Custom/Slider"), {
   ssr: false,
 });
 
-const CssTextField = dynamic(() => import("../Custom/InputField"), {
-  ssr: false,
-});
-
 const CssCheckbox = dynamic(() => import("../Custom/Checkbox"), {
   ssr: false,
 });
-
-const theme = {
-  primary: "#60A5FA",
-  hover: "#93C5FD",
-  color: "white",
-  nofocus: "white",
-};
 
 const RandomChars =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@§$%&()=[]{}#+-*/,.";
@@ -91,28 +80,30 @@ function PasswordManager() {
             readOnly
             id="Password"
           />
-          <Tooltip
-            PopperProps={{
-              disablePortal: true,
-            }}
-            title={<div className="text-base">Copied</div>}
-            arrow
-            open={open}
-            disableFocusListener
-            disableHoverListener
-            disableTouchListener
-            onClick={handleClick}
-            placement="top"
-          >
-            <IconButton
-              aria-label="Copy"
-              disableFocusRipple={true}
-              color="inherit"
-              className="focus:outline-none hover:text-gray-400"
+          <div className="border-l-2 border-white border-opacity-50">
+            <Tooltip
+              PopperProps={{
+                disablePortal: true,
+              }}
+              title={<div className="text-base">Copied</div>}
+              arrow
+              open={open}
+              disableFocusListener
+              disableHoverListener
+              disableTouchListener
+              onClick={handleClick}
+              placement="top"
             >
-              <FileCopyIcon color="inherit" />
-            </IconButton>
-          </Tooltip>
+              <IconButton
+                aria-label="Copy"
+                disableFocusRipple={true}
+                color="inherit"
+                className="focus:outline-none hover:text-gray-400"
+              >
+                <FileCopyIcon color="inherit" />
+              </IconButton>
+            </Tooltip>
+          </div>
         </div>
         <div className="col-span-2 sm:col-span-3 grid items-center">
           <div className="flex w-full gap-4">
