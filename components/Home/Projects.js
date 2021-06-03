@@ -24,20 +24,6 @@ const PROJECTS = [
     link: null,
   },
   {
-    name: "Tools",
-    description: "Little Tools for everyone",
-    picture: (
-      <Image
-        alt="Tools"
-        src="/pictures/website.jpg"
-        width="16"
-        height="9"
-        layout="responsive"
-      />
-    ),
-    link: { extern: false, to: "/tools" },
-  },
-  {
     name: "Triggerbot CS:GO",
     description: "External Triggerbot for CS:GO",
     picture: (
@@ -52,18 +38,18 @@ const PROJECTS = [
     link: { extern: true, to: "https://github.com/Jamaki5/CS" },
   },
   {
-    name: "Chat App",
-    description: "Self hostable Chat App (wip)",
+    name: "Simple Tools",
+    description: "Some simple and helpfull Tools",
     picture: (
       <Image
-        alt="Chat App"
+        alt="Triggerbot"
         src="/pictures/website.jpg"
         width="16"
         height="9"
         layout="responsive"
       />
     ),
-    link: { extern: true, to: "https://github.com/Jamaki5/chat" },
+    link: { extern: false, to: "/tools" },
   },
 ];
 
