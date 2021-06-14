@@ -71,7 +71,6 @@ function contact() {
     });
 
     if (!eName && !eMessage && !eAddress && !eValid) {
-      alert("Success");
       fetch("/api/email", {
         method: "POST",
         headers: {
