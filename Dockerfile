@@ -1,15 +1,24 @@
 # Naively Simple Node Dockerfile
 
+FROM node:14.17-alpine as builder
+
+WORKDIR /usr/app
+COPY ./package*.json ./
+RUN npm install
+COPY ./ ./
+RUN npm run build
+
 FROM node:14.17-alpine
 
-RUN mkdir -p /home/app/ && chown -R node:node /home/app
-WORKDIR /home/app
-COPY --chown=node:node . .
+WORKDIR /usr/app
+COPY --from=builder /usr/app/.next ./.next
+COPY ./package*.json ./
+COPY ./public ./public
+RUN npm install --production
 
 USER node
 
-RUN npm install 
-RUN npm run build
-
 EXPOSE 3000
-CMD [ "npm", "run", "start" ]
+
+CMD ["npm", "run", "start"]
+
