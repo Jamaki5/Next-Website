@@ -39,7 +39,7 @@ jobs:
         name: Build and push website
         uses: docker/build-push-action@v2
         with:
-          context: ./client
+          context: ./
           platforms: linux/amd64
           push: true
           tags: ${{ steps.docker_meta-website.outputs.tags }}
