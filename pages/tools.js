@@ -10,7 +10,7 @@ function tools() {
         <div className="my-6 text-4xl self-center font-semibold md:self-start">
           Tools
         </div>
-        <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-4 mb-6">
+        <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 auto-rows-fr">
           <PasswordGenerator />
           <Json_decoder />
           <Hash />
