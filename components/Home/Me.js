@@ -95,7 +95,6 @@ function Me() {
                 src="/pictures/me.jpg"
                 width="200"
                 height="200"
-                layout="fixed"
               />
             </div>
           </div>

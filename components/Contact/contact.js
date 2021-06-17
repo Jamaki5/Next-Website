@@ -2,11 +2,12 @@ import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import Button from "@material-ui/core/Button";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import Tooltip from "@material-ui/core/Tooltip";
 
 import ContactMe from "./otherContacts";
 import style from "../../styles/All.module.css";
 
-const regrexEmail = new RegExp("[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+");
+const regrexEmail = new RegExp("[^@ \t\r\n]+@[^@ \t\r\n]+.[^@ \t\r\n]+");
 
 const CssTextField = dynamic(() => import("../Custom/InputField"), {
   ssr: false,
@@ -24,18 +25,30 @@ function contact() {
     errorAddress: "",
     errorValid: "",
   });
+  const [toolMessage, setToolMessage] = useState("Submitted Successfully");
   const [token, setToken] = useState("");
+  const [open, setOpen] = useState(false);
   const captcha = useRef();
 
   const handleExpire = () => {
     setToken("");
   };
 
-  const handleSend = () => {
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleClick = () => {
+    setOpen(true);
+    setTimeout(handleClose, 2000);
+  };
+
+  const handleSend = async () => {
     let eName = "";
     let eMessage = "";
     let eAddress = "";
     let eValid = "";
+    let answer;
 
     if (email.name === "") {
       eName = "The Namefield can't be empty.";
@@ -71,7 +84,7 @@ function contact() {
     });
 
     if (!eName && !eMessage && !eAddress && !eValid) {
-      fetch("/api/email", {
+      answer = await fetch("/api/email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,13 +97,35 @@ function contact() {
         }),
       });
       captcha.current.resetCaptcha();
+
+      if (answer.ok) {
+        setEmail({
+          name: "",
+          address: "",
+          message: "",
+        });
+        document.getElementById("name").value = "";
+        document.getElementById("message").value = "";
+        document.getElementById("e-mail").value = "";
+
+        setToolMessage("Submitted successfully");
+        handleClick();
+      } else {
+        setToolMessage("Something went wrong");
+        handleClick();
+      }
+    } else {
+      setToolMessage("Please check your input");
+      handleClick();
     }
   };
 
   return (
     <div className="w-full h-full flex flex-col px-4">
-            <div className="flex flex-col w-full lg:max-w-6xl place-self-center">
-        <div className="mt-6 md:mt-16 text-4xl font-semibold mb-6 self-center md:self-start">Contact</div>
+      <div className="flex flex-col w-full lg:max-w-6xl place-self-center">
+        <div className="mt-6 md:mt-16 text-4xl font-semibold mb-6 self-center md:self-start">
+          Contact
+        </div>
         <div className="rounded bg-white bg-opacity-10 flex flex-col gap-4 px-4">
           <div className="mt-4">
             My E-Mail address:
@@ -191,13 +226,23 @@ function contact() {
               )}
             </div>
             <div className="bg-blue-400 rounded place-self-center hover:shadow-md">
-              <Button
-                color="inherit"
-                className="focus:outline-none"
+              <Tooltip
+                PopperProps={{
+                  disablePortal: true,
+                }}
+                title={<div className="text-base">{toolMessage}</div>}
+                arrow
+                open={open}
+                disableFocusListener
+                disableHoverListener
+                disableTouchListener
                 onClick={handleSend}
+                placement="top"
               >
-                <div className="text-lg">Send</div>
-              </Button>
+                <Button color="inherit" className="focus:outline-none">
+                  <div className="text-lg">Send</div>
+                </Button>
+              </Tooltip>
             </div>
           </div>
         </div>
