@@ -116,7 +116,7 @@ function AboutMe() {
           <div className={style.constColor}>Webdeveloper</div>
         </Parallax>
       </div>
-      <div className="w-full h-full flex flex-col place-self-center max-w-7xl">
+      <div className="w-full h-full flex flex-col place-self-center max-w-7xl z-10">
         <div className="text-5xl md:text-7xl px-4 mt-10 mb-10">About Me</div>
         <div className="grid grid-cols-1 lg:grid-cols-5 px-4 gap-4 h-full w-full">
           <div className="self-center w-full col-span-1 lg:col-span-2 gap-4 max-w-2xl justify-self-center">

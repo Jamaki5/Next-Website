@@ -8,6 +8,11 @@ import Image from "next/image";
 
 import style from "../../styles/All.module.css";
 
+import WebsitePicture from "../../public/pictures/website.jpg"
+import reactPicture from "../../public/pictures/projects/react.png"
+import materialPicture from "../../public/pictures/projects/material-ui.png"
+import javascriptPicture from "../../public/pictures/projects/javascript.png"
+
 const PROJECTS = [
   {
     name: "Website",
@@ -15,7 +20,7 @@ const PROJECTS = [
     picture: (
       <Image
         alt="Website"
-        src="/pictures/website.jpg"
+        src={WebsitePicture}
         width="16"
         height="9"
         layout="responsive"
@@ -29,7 +34,7 @@ const PROJECTS = [
     picture: (
       <Image
         alt="Triggerbot"
-        src="/pictures/website.jpg"
+        src={WebsitePicture}
         width="16"
         height="9"
         layout="responsive"
@@ -43,7 +48,7 @@ const PROJECTS = [
     picture: (
       <Image
         alt="Triggerbot"
-        src="/pictures/website.jpg"
+        src={WebsitePicture}
         width="16"
         height="9"
         layout="responsive"
@@ -147,7 +152,7 @@ function Projects() {
           <Image
             alt="reactPicture"
             className={style.reactPicture}
-            src="/pictures/projects/react.png"
+            src={reactPicture}
             width={300}
             height={300}
           />
@@ -160,7 +165,7 @@ function Projects() {
         >
           <Image
             alt="javascriptPicture"
-            src="/pictures/projects/javascript.png"
+            src={javascriptPicture}
             width={300}
             height={300}
           />
@@ -173,13 +178,13 @@ function Projects() {
         >
           <Image
             alt="material-uiPicture"
-            src="/pictures/projects/material-ui.png"
+            src={materialPicture}
             width={300}
             height={300}
           />
         </Parallax>
       </div>
-      <div className="h-full place-self-center max-w-7xl w-full flex flex-col">
+      <div className="h-full place-self-center max-w-7xl w-full flex flex-col z-10">
         <div className="text-5xl md:text-7xl px-4 mt-10 mb-10">Projects</div>
         <div className="hidden md:grid grid-cols-2 grid-rows-2 px-4 justify-items-center items-center h-full w-full gap-8 mb-6 opacity-90">
           {PROJECTS.map((p, index) => makeCard(p, index))}
