@@ -70,7 +70,7 @@ function PasswordManager() {
   };
 
   return (
-    <div className="flex flex-col self-center w-full md:max-w-md h-full px-4 bg-white bg-opacity-10 rounded place-self-center">
+    <div className="flex flex-col self-center w-full md:max-w-lg h-full px-4 bg-white bg-opacity-10 rounded place-self-center">
       <h2 className="text-2xl mt-2">Password Generator</h2>
       <div className="grid w-full h-full grid-rows-4 sm:grid-rows-3 grid-cols-2 sm:grid-cols-3">
         <div className="flex col-span-2 sm:col-span-3 my-4 self-center rounded focus:border-gray-300 border-white border-2">
