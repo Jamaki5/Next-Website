@@ -94,7 +94,7 @@ function AboutMe() {
           <div className="text-white">
             <LocationOnIcon />
           </div>
-          <div className={style.constColor}>&nbsp;Magdeburg</div>
+          <div className={style.constColor}>&nbsp;Magdeburg, Germany</div>
         </Parallax>
         <Parallax
           percentage={0.9}

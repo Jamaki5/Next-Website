@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 import style from "../../styles/All.module.css";
 
-import mePicture from "../../public/pictures/me.jpg"
+import mePicture from "../../public/pictures/me.jpg";
 
 const NoSSRBackground = dynamic(() => import("./MeBackground"), {
   ssr: false,
@@ -96,6 +96,8 @@ function Me() {
                 className="rounded"
                 src={mePicture}
                 placeholder="blur"
+                width="250"
+                height="250"
               />
             </div>
           </div>
@@ -111,7 +113,8 @@ function Me() {
           <Image
             alt="Jann-Marten Kias"
             className="rounded"
-            src="/pictures/me.jpg"
+            src={mePicture}
+            placeholder="blur"
             width="250"
             height="250"
           />

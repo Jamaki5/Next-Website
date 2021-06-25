@@ -11,7 +11,7 @@ import style from "../../styles/All.module.css";
 import WebsitePicture from "../../public/pictures/website.jpg"
 import reactPicture from "../../public/pictures/projects/react.png"
 import materialPicture from "../../public/pictures/projects/material-ui.png"
-import javascriptPicture from "../../public/pictures/projects/javascript.png"
+import javascriptPicture from "../../public/pictures/projects/javascript.jpg"
 
 const PROJECTS = [
   {
