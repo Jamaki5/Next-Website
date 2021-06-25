@@ -126,7 +126,7 @@ function contact() {
         <div className="mt-6 md:mt-16 text-4xl font-semibold mb-6 self-center md:self-start">
           Contact
         </div>
-        <div className="rounded bg-white bg-opacity-10 flex flex-col gap-4 px-4">
+        <div className="rounded bg-white bg-opacity-10 flex flex-col gap-4 px-4 mx-4">
           <div className="mt-4">
             My E-Mail address:
             <br />
@@ -248,7 +248,7 @@ function contact() {
         </div>
       </div>
       <div className="flex flex-col lg:max-w-6xl place-self-center w-full">
-        <div className="mt-16 text-2xl font-semibold">Or contact me via: </div>
+        <div className="ml-2 mt-16 text-2xl font-semibold">Or contact me via: </div>
         <ContactMe />
       </div>
     </div>

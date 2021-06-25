@@ -82,6 +82,33 @@ function AboutMe() {
     );
   }
 
+  function makeContent(item) {
+    return (
+      <div
+        data-aos="zoom-in"
+        data-aos-anchor-placement="center-bottom"
+        data-aos-duration="500"
+        key={`${item.name}`}
+        className="grid w-full h-full text-lg rounded bg-white bg-opacity-10 p-4"
+      >
+        <div className="flex text-2xl">
+          {item.name}&nbsp;
+          <div className="text-base self-end">({item.time})</div>
+        </div>
+
+        <div>
+          <LocationOnIcon />
+          &nbsp; {item.position}
+        </div>
+        <div>
+          <SchoolIcon />
+          &nbsp;{item.school}
+        </div>
+        <div>{item.content}</div>
+      </div>
+    );
+  }
+
   return (
     <div className={style.page}>
       <div className={style.background}>
@@ -120,7 +147,12 @@ function AboutMe() {
         <div className="text-5xl md:text-7xl px-4 mt-10 mb-10">About Me</div>
         <div className="grid grid-cols-1 lg:grid-cols-5 px-4 gap-4 h-full w-full">
           <div className="self-center w-full col-span-1 lg:col-span-2 gap-4 max-w-2xl justify-self-center">
-            <div className="bg-white bg-opacity-10 rounded p-4 text-lg">
+            <div
+              data-aos="zoom-in"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-duration="500"
+              className="bg-white bg-opacity-10 rounded p-4 text-lg"
+            >
               Mein Name ist Jann-Marten Kias. Bereits in jungen Jahren habe ich
               durch meine Leidenschaft als Gamer mich mit Technik beschäftigt.
               Aktuell studiere ich an der Otto-von-Guericke Universität
@@ -148,6 +180,10 @@ function AboutMe() {
             <Timeline align="alternate">
               {TIMELINE.map((item, index) => makeTimelineItem(item, index))}
             </Timeline>
+          </div>
+          <div className="grid lg:hidden gap-4 h-full grid-span-1 w-full items-center justify-self-center">
+            <div className="text-3xl mt-4">Timeline</div>
+            {TIMELINE.map((item) => makeContent(item))}
           </div>
         </div>
       </div>
