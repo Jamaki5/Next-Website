@@ -29,7 +29,6 @@ function Nav(props) {
             placement="right"
             onClick={() => {
               props.setCollapsed(true);
-              console.log("hi");
             }}
           >
             <IconButton aria-label={name} className="w-16 focus:outline-none">

@@ -5,6 +5,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import BuildIcon from "@material-ui/icons/Build";
 import MailIcon from "@material-ui/icons/Mail";
+import ArchiveIcon from "@material-ui/icons/Archive";
 
 import style from "../styles/All.module.css";
 import Nav from "./Nav";
@@ -18,9 +19,15 @@ const LINKS = [
     icon: <HomeIcon className="text-white hover:text-gray-300" />,
   },
   {
+    name: "Projects",
+    path: "/projects",
+    show: true,
+    icon: <ArchiveIcon className="text-white hover:text-gray-300" />,
+  },
+  {
     name: "Tools",
     path: "/tools",
-    show: true,
+    show: false,
     icon: <BuildIcon className="text-white hover:text-gray-300" />,
   },
   {
