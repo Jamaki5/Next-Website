@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Button from "@material-ui/core/Button";
 
-import pic from "../../public/pictures/website.jpg";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 export default function ProjectFront({ project }) {
+  const [index, setIndex] = useState(0);
+
   function getButton(link) {
     if (link === "") {
       return (
@@ -29,19 +32,61 @@ export default function ProjectFront({ project }) {
     );
   }
 
+  function handleClick(site) {
+    if (site === "back") {
+      if (index === 0) {
+        setIndex(project.pictures.length - 1);
+      } else {
+        setIndex(index - 1);
+      }
+    }
+
+    if (site === "front") {
+      if (index === project.pictures.length - 1) {
+        setIndex(0);
+      } else {
+        setIndex(index + 1);
+      }
+    }
+  }
+
+  function leftButton() {
+    return (
+      <button
+        className="h-1/3 top-1/3 left-0 absolute z-20 bg-white bg-opacity-10 grid hover:bg-opacity-20"
+        onClick={() => handleClick("back")}
+      >
+        <ArrowBackIosIcon className="place-self-center"/>
+      </button>
+    );
+  }
+
+  function rightButton() {
+    return (
+      <button
+        className="h-1/3 top-1/3 right-0 absolute z-20 bg-white bg-opacity-10 grid hover:bg-opacity-20"
+        onClick={() => handleClick("back")}
+      >
+        <ArrowForwardIosIcon className="place-self-center"/>
+      </button>
+    );
+  }
+
   return (
     <div className="w-full h-full bg-white bg-opacity-10 rounded p-4 grid">
       <div className="text-2xl">{project.name}</div>
       <div className="opacity-50 text-sm mb-2">{project.year}</div>
       <div className="text-lg z-10">{project.description}</div>
-      <div className="opacity-75 my-2 hover:opacity-90">
+      <div className="opacity-75 my-2 hover:opacity-90 relative">
         <Image
           alt={project.name}
-          src={pic}
+          src={project.pictures[index]}
           width="16"
           height="9"
           layout="responsive"
         />
+        {leftButton()}
+        {rightButton()}
       </div>
       <div className="z-10">
         Build with:

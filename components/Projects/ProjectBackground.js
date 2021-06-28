@@ -3,14 +3,14 @@ import Image from "next/image";
 
 import style from "../../styles/All.module.css";
 
-import reactPicture from "../../public/pictures/projects/react.png";
-import materialPicture from "../../public/pictures/projects/material-ui.png";
-import javascriptPicture from "../../public/pictures/projects/javascript.jpg";
-import dockerPicture from "../../public/pictures/projects/docker.svg";
-import csharpPicture from "../../public/pictures/projects/csharp.svg";
-import nextPicture from "../../public/pictures/projects/next.png";
-import tailwindPicture from "../../public/pictures/projects/tailwind.svg";
-import cplusplusPicture from "../../public/pictures/projects/c++.png";
+import reactPicture from "../../public/pictures/projects/frameworks/react.png";
+import materialPicture from "../../public/pictures/projects/frameworks/material-ui.png";
+import javascriptPicture from "../../public/pictures/projects/frameworks/javascript.jpg";
+import dockerPicture from "../../public/pictures/projects/frameworks/docker.svg";
+import csharpPicture from "../../public/pictures/projects/frameworks/csharp.svg";
+import nextPicture from "../../public/pictures/projects/frameworks/next.png";
+import tailwindPicture from "../../public/pictures/projects/frameworks/tailwind.svg";
+import cplusplusPicture from "../../public/pictures/projects/frameworks/c++.png";
 
 const POSITION = [
   { left: "75%", top: "3%", rotation: "rotateZ(5deg)" },

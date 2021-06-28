@@ -3,6 +3,9 @@ import React from "react";
 import ProjectFront from "./ProjectFront";
 import ProjectBackground from "./ProjectBackground";
 
+import websitePic from "../../public/pictures/projects/website/website.jpg";
+import projectsPic from "../../public/pictures/projects/website/projects.png";
+
 const PROJECTS = [
   {
     name: "Three.js Website",
@@ -10,6 +13,7 @@ const PROJECTS = [
     link: "",
     description: "Dummy site for Three.js experience.",
     frameworks: ["javascript", "three", "docker", "next.js"],
+    pictures: [websitePic , websitePic ],
   },
   {
     name: "Website",
@@ -24,6 +28,7 @@ const PROJECTS = [
       "docker",
       "next.js",
     ],
+    pictures: [websitePic , projectsPic ],
   },
   {
     name: "CS:GO Triggerbot",
@@ -32,6 +37,7 @@ const PROJECTS = [
     description:
       "A small extern Triggerbot. The Offsets have to be changed for every CS:GO version.",
     frameworks: ["c++", "cs:go"],
+    pictures: [websitePic , websitePic ],
   },
   {
     name: "Hearthstone Bot",
@@ -40,6 +46,7 @@ const PROJECTS = [
     description:
       "Hearthstone Bot for SabberStone. Got the first place in the officel IEEE contest 2020",
     frameworks: ["c#", "sabberstone"],
+    pictures: [websitePic , websitePic ],
   },
 ];
 
