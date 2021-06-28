@@ -49,7 +49,7 @@ export default function Projects() {
       <div className="mt-6 md:mt-16 text-4xl font-semibold mb-6 self-center md:self-start">
         Projects
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 mx-4 lg:mx-0">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 mx-4">
         {PROJECTS.map((project) => {
           return (
             <div className="relative w-full h-full" key={project.name}>

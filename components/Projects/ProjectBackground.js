@@ -13,7 +13,7 @@ import tailwindPicture from "../../public/pictures/projects/tailwind.svg";
 import cplusplusPicture from "../../public/pictures/projects/c++.png";
 
 const POSITION = [
-  { left: "75%", top: "5%", rotation: "rotateZ(5deg)" },
+  { left: "75%", top: "3%", rotation: "rotateZ(5deg)" },
   { left: "15%", top: "25%", rotation: "rotateZ(12deg)" },
   { left: "35%", top: "66%", rotation: "rotateZ(-12deg)" },
   { left: "65%", top: "54%", rotation: "rotateZ(-17deg)" },

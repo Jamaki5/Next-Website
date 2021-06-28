@@ -5,6 +5,30 @@ import Button from "@material-ui/core/Button";
 import pic from "../../public/pictures/website.jpg";
 
 export default function ProjectFront({ project }) {
+  function getButton(link) {
+    if (link === "") {
+      return (
+        <div className="text-white cursor-not-allowed">
+          <Button color="primary" className="w-full" disabled>
+            Open
+          </Button>
+        </div>
+      );
+    }
+    return (
+      <a
+        className="w-full"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={project.link}
+      >
+        <Button color="primary" className="w-full">
+          <div className="text-white">Open</div>
+        </Button>
+      </a>
+    );
+  }
+
   return (
     <div className="w-full h-full bg-white bg-opacity-10 rounded p-4 grid">
       <div className="text-2xl">{project.name}</div>
@@ -35,16 +59,7 @@ export default function ProjectFront({ project }) {
         })}
       </div>
       <div className="w-5/6 bg-blue-500 rounded hover:shadow-md mt-4 place-self-center bg-opacity-100 z-10">
-        <a
-          className="w-full"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={project.link}
-        >
-          <Button color="primary" className="w-full">
-            <div className="text-white">Open</div>
-          </Button>
-        </a>
+        {getButton(project.link)}
       </div>
     </div>
   );
