@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Button from "@material-ui/core/Button";
 
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import Arrow from "@material-ui/icons/ArrowForwardIos";
 
 export default function ProjectFront({ project }) {
   const [index, setIndex] = useState(0);
@@ -51,25 +50,31 @@ export default function ProjectFront({ project }) {
   }
 
   function leftButton() {
-    return (
-      <button
-        className="h-1/3 top-1/3 left-0 absolute z-20 bg-white bg-opacity-10 grid hover:bg-opacity-20"
-        onClick={() => handleClick("back")}
-      >
-        <ArrowBackIosIcon className="place-self-center"/>
-      </button>
-    );
+    if (project.pictures.length < 2) return;
+    else {
+      return (
+        <button
+          className="h-1/3 top-1/3 left-0 absolute z-20 bg-white bg-opacity-10 grid hover:bg-opacity-20 rounded focus:outline-none place-items-center transform rotate-180"
+          onClick={() => handleClick("back")}
+        >
+          <Arrow />
+        </button>
+      );
+    }
   }
 
   function rightButton() {
-    return (
-      <button
-        className="h-1/3 top-1/3 right-0 absolute z-20 bg-white bg-opacity-10 grid hover:bg-opacity-20"
-        onClick={() => handleClick("back")}
-      >
-        <ArrowForwardIosIcon className="place-self-center"/>
-      </button>
-    );
+    if (project.pictures.length < 2) return;
+    else {
+      return (
+        <button
+          className="h-1/3 top-1/3 right-0 absolute z-20 bg-white bg-opacity-10 grid hover:bg-opacity-20 rounded focus:outline-none place-items-center"
+          onClick={() => handleClick("front")}
+        >
+          <Arrow />
+        </button>
+      );
+    }
   }
 
   return (

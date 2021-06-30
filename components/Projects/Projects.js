@@ -13,13 +13,13 @@ const PROJECTS = [
     link: "",
     description: "Dummy site for Three.js experience.",
     frameworks: ["javascript", "three", "docker", "next.js"],
-    pictures: [websitePic , websitePic ],
+    pictures: [websitePic ],
   },
   {
     name: "Website",
     year: "2021",
     link: "https://github.com/Jamaki5/Next-Website",
-    description: "A simple Website to intoduce myself.",
+    description: "A simple Website to introduce myself.",
     frameworks: [
       "javascript",
       "react",
@@ -36,17 +36,17 @@ const PROJECTS = [
     link: "https://github.com/Jamaki5/CS",
     description:
       "A small extern Triggerbot. The Offsets have to be changed for every CS:GO version.",
-    frameworks: ["c++", "cs:go"],
-    pictures: [websitePic , websitePic ],
+    frameworks: ["c++"],
+    pictures: [websitePic ],
   },
   {
     name: "Hearthstone Bot",
     year: "2020",
     link: "https://hearthstoneai.github.io/results2020.html",
     description:
-      "Hearthstone Bot for SabberStone. Got the first place in the officel IEEE contest 2020",
-    frameworks: ["c#", "sabberstone"],
-    pictures: [websitePic , websitePic ],
+      "Hearthstone Bot for SabberStone. Got the first place in the official IEEE contest 2020",
+    frameworks: ["c#"],
+    pictures: [websitePic ],
   },
 ];
 
