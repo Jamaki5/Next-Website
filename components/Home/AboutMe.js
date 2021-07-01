@@ -18,22 +18,22 @@ const TIMELINE = [
   {
     time: "2017 - now",
     name: "Bachelor",
-    position: "Magdeburg",
+    position: "Magdeburg, Germany",
     school: "Otto-von-Guericke University",
     icon: <QueryBuilderIcon />,
     iconColor: "bg-blue-400",
     content:
-      "In meinem Informatik Studium habe ich von grundlegenden Prinzipien, wie Algorhytmen und Datenstrukturen, bis hin zu maschinellem Lernen, Neuronale Netze und sicherheitstechnische Konzepte.",
+      "Since 2017 I studied computer science at the Otto-von-Guericke university. While my ongoing Bachelor degree I learned about fundamental principles from algorithms and data structures to machine learning.",
   },
   {
     time: "2012 - 2017",
     name: "High School",
-    position: "Wittenberge",
+    position: "Wittenberge, Germany",
     school: "Marie-Curie Gymnasium",
     icon: <CheckCircleIcon />,
     iconColor: "bg-green-400",
     content:
-      "Bereits in der Schule habe ich großes Interesse an Informatik gehabt, welches von meinem Hobby als Gamer gefördert wurde. Zu dieser Zeit habe ich hauptsächlich die technischen Grundlagen eines PCs mir angeschaut.",
+      "I began to be interested in computer science when I was in high school. At that time I dealt with the technical basics of computers.",
   },
 ];
 
@@ -153,22 +153,19 @@ function AboutMe() {
               data-aos-duration="500"
               className="bg-white bg-opacity-10 rounded p-4 text-lg"
             >
-              Mein Name ist Jann-Marten Kias. Bereits in jungen Jahren habe ich
-              durch meine Leidenschaft als Gamer mich mit Technik beschäftigt.
-              Aktuell studiere ich an der Otto-von-Guericke Universität
-              Informatik im Bachelor. Während meines Studiums habe ich bereits
-              diverse Fächer absolviert. Dazu zählen: Machine Learning, Deep
-              Learning, Grundlagen der C++ Programmierung und viele Weitere. Zum
-              jetztigen Zeitpunkt suche ich ein Praktikum um meinen Bachelor
-              abschließen zu können.
+              Hello, my name is Jann-Marten Kias. From a young age, I became
+              enthusiastic about technology through my hobby as a gamer. I am
+              currently studying at the Otto-von-Guericke university. Some of
+              the subjects I've already completed include: machine learning,
+              deep learning, basics of c ++ programming, computational
+              intelligence in games and a lot more. I am currently looking for
+              an internship.
               <br />
               <br />
-              In meinem Studium und in eigenen Projekten habe ich mir Kenntnisse
-              in verschiedenen Bereichen der Software Entwicklung angeeignet.
-              Aktuell befasse ich mich mit Frontend und etwas
-              Backend-Entwicklung. Dafür nutze ich Next.js, GraphQl und Apollo.
-              Für Versionierung und einfaches Deployment benutze ich Git und
-              Docker.
+              In my studies and in my free time I have acquired knowledge in
+              various areas of software development. I am currently working on
+              the development of frontend. My current stack includes: Next.js,
+              React, Tailwind CSS, Material-UI, Javascript, git and Docker.
             </div>
           </div>
           <div
