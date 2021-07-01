@@ -23,7 +23,7 @@ function MeBackground() {
       <Parallax
         speed={6}
         className={style.backgroundItem}
-        style={{ left: "20%", top: "20%", transform: "rotateZ(-10deg)" }}
+        style={{ left: "10%", top: "25%", transform: "rotateZ(-10deg)" }}
       >
         <div className={style.importColor}>import &nbsp;</div>
         <div className={style.varColor}>React &nbsp;</div>
@@ -33,7 +33,7 @@ function MeBackground() {
       <Parallax
         speed={8}
         className={style.backgroundItem}
-        style={{ right: "20%", top: "50%", transform: "rotateZ(17deg)" }}
+        style={{ right: "10%", top: "50%", transform: "rotateZ(22deg)" }}
       >
         <div className={style.constColor}>const</div>
         <div>[</div>
@@ -49,7 +49,7 @@ function MeBackground() {
       <Parallax
         speed={2}
         className={style.backgroundItem}
-        style={{ left: "20%", top: "75%", transform: "rotateZ(-12deg)" }}
+        style={{ left: "30%", top: "80%", transform: "rotateZ(5deg)" }}
       >
         <div className={style.constColor}>&#123;</div>
         <div className={style.varColor}>windowH:&nbsp;</div>

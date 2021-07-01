@@ -93,24 +93,24 @@ function AboutMe() {
       >
         <div className="flex text-2xl">
           {item.name}&nbsp;
-          <div className="text-base self-end">({item.time})</div>
+          <div className="text-base self-center">({item.time})</div>
         </div>
 
-        <div>
+        <div className="mt-2">
           <LocationOnIcon />
           &nbsp; {item.position}
         </div>
-        <div>
+        <div className="mb-2">
           <SchoolIcon />
           &nbsp;{item.school}
         </div>
-        <div>{item.content}</div>
+        <div className="text-xl">{item.content}</div>
       </div>
     );
   }
 
   return (
-    <div className={style.page}>
+    <div className={style.content + " mb-6"}>
       <div className={style.background}>
         <Parallax
           percentage={0.9}

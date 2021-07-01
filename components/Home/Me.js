@@ -82,15 +82,14 @@ function Me() {
   return (
     <div className={style.page}>
       <NoSSRBackground />
-      <div className="h-full w-full z-10">
-        <div className="hidden md:grid h-full w-full px-4">
-          <div className="grid grid-cols-3">
-            <div className="flex flex-col col-start-1 col-end-3">
-              <div className="mt-6 text-4xl">Hi,</div>
-              <div className="mt-4 text-4xl">my Name is</div>
-              <div className="mt-6 text-7xl">Jann-Marten Kias</div>
+      <div className="h-full w-full grid">
+        <div className="hidden md:grid h-full max-w-6xl place-self-center">
+          <div className="grid w-full my-auto z-10">
+            <div className={style.name + " place-self-center flex flex-col"}>
+              <div className="text-4xl self-center">Hi, my Name is</div>
+              <div className="text-5xl lg:text-7xl mb-6">Jann-Marten Kias</div>
             </div>
-            <div className="justify-self-center mt-8">
+            <div className={style.picture + " justify-self-center"}>
               <Image
                 alt="Jann-Marten Kias"
                 className="rounded"
@@ -100,16 +99,21 @@ function Me() {
                 height="250"
               />
             </div>
-          </div>
-          <div className="justify-self-baseline self-end">
-            <div className="grid text-3xl mb-2">I am a</div>
-            <div className="flex mb-8 text-5xl">
-              <div>{description.text}</div>
-              <div className={description.hidden ? "opacity-0" : ""}>_</div>
+            <div className={style.description + " mt-6 flex flex-col"}>
+              <div className="grid text-3xl mb-2 self-center">I am a</div>
+              <div className="flex mb-8 text-5xl lg:text-6xl self-center">
+                <div>{description.text}</div>
+                <div className={description.hidden ? "opacity-0" : ""}>_</div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="h-full w-full flex flex-col justify-center items-center md:hidden">
+        <div
+          data-aos="zoom-in"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-duration="1000"
+          className="h-full w-full flex flex-col justify-center items-center md:hidden"
+        >
           <Image
             alt="Jann-Marten Kias"
             className="rounded"
@@ -118,7 +122,13 @@ function Me() {
             width="250"
             height="250"
           />
-          <div className="grid">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-duration="1000"
+            data-aos-delay="1000"
+            className="grid"
+          >
             <div className="text-4xl mt-6">Jann-Marten Kias</div>
             <div className="flex text-xl mt-1">
               <div>{description.text}</div>

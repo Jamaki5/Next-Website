@@ -10,11 +10,72 @@
   color: whitesmoke;
 }
 
+.content{
+  position: relative;
+  display: grid;
+  width: 100%;
+  color: whitesmoke;
+}
+
 .contact {
   position: relative;
   display: grid;
   width: 100%;
   color: whitesmoke;
+}
+
+.picture {
+  animation: pictureDown 2s;
+}
+
+.name {
+  animation: shiftUp 5s;
+}
+
+.description {
+  animation: shiftDown 5s;
+}
+
+@keyframes shiftUp {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes shiftDown {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes pictureDown {
+  0% {
+    transform: translateY(-30%);
+  }
+  50% {
+    transform: translateY(-30%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .link {
