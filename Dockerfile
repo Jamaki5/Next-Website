@@ -1,26 +1,45 @@
-# Naively Simple Node Dockerfile
+#
+# Builder stage.
+# This state compile our TypeScript to get the JavaScript code
+#
+FROM node:16 AS builder
 
-FROM node:14.17-alpine as builder
+WORKDIR /usr/src/app
 
-WORKDIR /usr/app
-COPY ./package*.json ./
-RUN npm install
-COPY ./ ./
-RUN npm run build
+COPY . .
 
-FROM node:14.17-alpine
+RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin
 
-WORKDIR /usr/app
-COPY --from=builder /usr/app/.next ./.next
-COPY ./package*.json ./
-COPY ./public ./public
-RUN npm install --production
+RUN yarn install --frozen-lockfile --silent
 
-USER node
+RUN yarn build
+
+RUN yarn install --production --frozen-lockfile --silent && /usr/local/bin/node-prune
+
+#
+# Production stage.
+# This state compile get back the JavaScript code from builder stage
+# It will also install the production package only
+#
+FROM node:16-alpine
+
+WORKDIR /app
 
 ENV PORT 3000
+ENV NODE_ENV=production
+ENV NODE_PATH=/app/dist/
+
+## We just need the build to execute the command
+COPY --from=builder /usr/src/app/.next ./.next
+COPY --from=builder /usr/src/app/node_modules ./node_modules
+
+## uncomment following line, if you want to mount the templates folder
+#COPY ./templates /app/templates
+
+## uncomment following line, if you want to mount the public folder
+#COPY ./public /app/public
+
+ENTRYPOINT [ "/app/node_modules/.bin/next" ]
+CMD [ "start", "-p", "$PORT" ]
 
 EXPOSE 3000
-
-CMD ["npm", "run", "start"]
-
