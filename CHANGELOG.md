@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/Jamaki5/Next-Website/compare/v0.1.0...v0.1.1) (2021-07-01)
+
+
+### Bug Fixes
+
+* **home:** add animation and reposition content ([48b5b9c](https://github.com/Jamaki5/Next-Website/commit/48b5b9c1b4450313daa5bae7efc369fea6d56b16))
+
 # [0.1.0](https://github.com/Jamaki5/Next-Website/compare/v0.0.4...v0.1.0) (2021-07-01)
 
 
