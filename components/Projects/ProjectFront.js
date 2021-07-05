@@ -7,11 +7,11 @@ import Arrow from "@material-ui/icons/ArrowForwardIos";
 export default function ProjectFront({ project }) {
   const [index, setIndex] = useState(0);
 
-  function getButton(link) {
-    if (link === "") {
+  function getButton(link, index) {
+    if (link.length === 0) {
       return (
-        <div className="text-white cursor-not-allowed">
-          <Button color="primary" className="w-full" disabled>
+        <div className="text-white cursor-not-allowed bg-blue-500 rounded hover:shadow-md bg-opacity-100 gird ">
+          <Button color="primary" className="w-full place-content-center" disabled>
             {project.button}
           </Button>
         </div>
@@ -19,13 +19,13 @@ export default function ProjectFront({ project }) {
     }
     return (
       <a
-        className="w-full"
+        className="w-full bg-blue-500 rounded hover:shadow-md bg-opacity-100 grid"
         target="_blank"
         rel="noopener noreferrer"
-        href={project.link}
+        href={project.link[index]}
       >
-        <Button color="primary" className="w-full">
-          <div className="text-white">Open: {project.button}</div>
+        <Button color="primary" className="w-full place-content-center">
+          <div className="text-white">{project.button[index]}</div>
         </Button>
       </a>
     );
@@ -109,8 +109,8 @@ export default function ProjectFront({ project }) {
           return ", " + frame.charAt(0).toUpperCase() + frame.slice(1);
         })}
       </div>
-      <div className="w-5/6 bg-blue-500 rounded hover:shadow-md mt-4 place-self-center bg-opacity-100 z-10">
-        {getButton(project.link)}
+      <div className={`w-5/6 mt-4 place-self-center z-10 grid gap-2 grid-cols-1 lg:grid-cols-${project.button.length}`}>
+        {project.link.map((link, index) => getButton(link, index))}
       </div>
     </div>
   );

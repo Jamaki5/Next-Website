@@ -3,14 +3,14 @@ import Image from "next/image";
 
 import style from "../../styles/All.module.css";
 
-import reactPicture from "../../public/pictures/projects/frameworks/react.png";
-import materialPicture from "../../public/pictures/projects/frameworks/material-ui.png";
-import javascriptPicture from "../../public/pictures/projects/frameworks/javascript.jpg";
+import reactPicture from "../../public/pictures/projects/frameworks/react.svg";
+import materialPicture from "../../public/pictures/projects/frameworks/material-ui.svg";
+import javascriptPicture from "../../public/pictures/projects/frameworks/javascript.svg";
 import dockerPicture from "../../public/pictures/projects/frameworks/docker.svg";
 import csharpPicture from "../../public/pictures/projects/frameworks/csharp.svg";
-import nextPicture from "../../public/pictures/projects/frameworks/next.png";
+import nextPicture from "../../public/pictures/projects/frameworks/next.svg";
 import tailwindPicture from "../../public/pictures/projects/frameworks/tailwind.svg";
-import cplusplusPicture from "../../public/pictures/projects/frameworks/c++.png";
+import cplusplusPicture from "../../public/pictures/projects/frameworks/c++.svg";
 
 const POSITION = [
   { left: "75%", top: "3%", rotation: "rotateZ(5deg)" },
@@ -70,6 +70,7 @@ export default function ProjectBackground({ project }) {
               }}
             >
               <Image
+                unoptimized={true}
                 className={frame === "react" ? style.reactPicture : ""}
                 alt={project.name + frame}
                 src={image}

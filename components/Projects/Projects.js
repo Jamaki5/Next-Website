@@ -4,22 +4,23 @@ import ProjectFront from "./ProjectFront";
 import ProjectBackground from "./ProjectBackground";
 
 import websitePic from "../../public/pictures/projects/website/website.jpg";
-import projectsPic from "../../public/pictures/projects/website/projects.png";
+import contactPic from "../../public/pictures/projects/website/contact.jpg";
+import sabberPic from "../../public/pictures/projects/sabberstone/sabberstone.jpg";
 
 const PROJECTS = [
   {
     name: "Three.js Website",
     year: "2021",
-    link: "",
+    link: [""],
     description: "Dummy site for Three.js experience.",
     frameworks: ["javascript", "three", "docker", "next.js"],
-    pictures: [websitePic ],
-    button: "under construction",
+    pictures: [websitePic],
+    button: ["under construction"],
   },
   {
     name: "Website",
     year: "2021",
-    link: "https://github.com/Jamaki5/Next-Website",
+    link: ["https://github.com/Jamaki5/Next-Website"],
     description: "A simple Website to introduce myself.",
     frameworks: [
       "javascript",
@@ -29,28 +30,28 @@ const PROJECTS = [
       "docker",
       "next.js",
     ],
-    pictures: [websitePic , projectsPic ],
-    button: "GitHub Repo",
+    pictures: [websitePic, contactPic],
+    button: ["GitHub Repo"],
   },
   {
     name: "CS:GO Triggerbot",
     year: "2020",
-    link: "",
+    link: [""],
     description:
       "A small extern Triggerbot. The Offsets have to be changed for every CS:GO version.",
     frameworks: ["c++"],
-    pictures: [websitePic ],
-    button: "private Project",
+    pictures: [websitePic],
+    button: ["private Project"],
   },
   {
     name: "Hearthstone Bot",
     year: "2020",
-    link: "https://hearthstoneai.github.io/results2020.html",
+    link: ["https://hearthstoneai.github.io/results2020.html", "https://github.com/AlexanderBabel/cig-agent"],
     description:
       "Hearthstone Bot for SabberStone. Got the first place in the official IEEE contest 2020",
     frameworks: ["c#"],
-    pictures: [websitePic ],
-    button: "Hearthstone AI GitHub",
+    pictures: [sabberPic],
+    button: ["Hearthstone AI GitHub", "Agent GitHub"],
   },
 ];
 
