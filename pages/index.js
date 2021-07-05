@@ -6,8 +6,10 @@ function Home() {
   return (
     <div className="min-h-screen w-full relative grid">
       <Me />
-      <AboutMe />
-      <MeContact />
+      <div className="min-h-screen w-full grid place-items-center">
+        <AboutMe />
+        <MeContact />
+      </div>
     </div>
   );
 }

@@ -14,6 +14,7 @@ const PROJECTS = [
     description: "Dummy site for Three.js experience.",
     frameworks: ["javascript", "three", "docker", "next.js"],
     pictures: [websitePic ],
+    button: "under construction",
   },
   {
     name: "Website",
@@ -29,15 +30,17 @@ const PROJECTS = [
       "next.js",
     ],
     pictures: [websitePic , projectsPic ],
+    button: "GitHub Repo",
   },
   {
     name: "CS:GO Triggerbot",
     year: "2020",
-    link: "https://github.com/Jamaki5/CS",
+    link: "",
     description:
       "A small extern Triggerbot. The Offsets have to be changed for every CS:GO version.",
     frameworks: ["c++"],
     pictures: [websitePic ],
+    button: "private Project",
   },
   {
     name: "Hearthstone Bot",
@@ -47,13 +50,14 @@ const PROJECTS = [
       "Hearthstone Bot for SabberStone. Got the first place in the official IEEE contest 2020",
     frameworks: ["c#"],
     pictures: [websitePic ],
+    button: "Hearthstone AI GitHub",
   },
 ];
 
 export default function Projects() {
   return (
-    <div className="flex flex-col w-full max-w-6xl justify-self-center">
-      <div className="mt-6 md:mt-16 text-4xl font-semibold mb-6 self-center md:self-start">
+    <div className="flex flex-col w-full max-w-6xl place-self-center">
+      <div className="mt-4 text-4xl font-semibold mb-6 self-center md:self-start">
         Projects
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 mx-4">

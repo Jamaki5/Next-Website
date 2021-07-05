@@ -115,6 +115,8 @@ function Me() {
           className="h-full w-full flex flex-col justify-center items-center md:hidden"
         >
           <Image
+            loading="eager"
+            priority={true}
             alt="Jann-Marten Kias"
             className="rounded"
             src={mePicture}

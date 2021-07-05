@@ -121,9 +121,9 @@ function contact() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full flex flex-col place-self-center">
       <div className="flex flex-col w-full max-w-6xl place-self-center">
-        <div className="mt-6 md:mt-16 text-4xl font-semibold mb-6 self-center md:self-start">
+        <div className="mt-4 text-4xl font-semibold mb-6 self-center md:self-start">
           Contact
         </div>
         <div className="rounded bg-white bg-opacity-10 flex flex-col gap-4 px-4 mx-4">

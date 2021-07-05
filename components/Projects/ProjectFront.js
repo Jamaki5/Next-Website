@@ -12,7 +12,7 @@ export default function ProjectFront({ project }) {
       return (
         <div className="text-white cursor-not-allowed">
           <Button color="primary" className="w-full" disabled>
-            Open
+            {project.button}
           </Button>
         </div>
       );
@@ -25,7 +25,7 @@ export default function ProjectFront({ project }) {
         href={project.link}
       >
         <Button color="primary" className="w-full">
-          <div className="text-white">Open</div>
+          <div className="text-white">Open: {project.button}</div>
         </Button>
       </a>
     );
@@ -84,7 +84,10 @@ export default function ProjectFront({ project }) {
       <div className="text-lg z-10">{project.description}</div>
       <div className="opacity-75 my-2 hover:opacity-90 relative">
         <Image
-          alt={project.name}
+          placeholder="blur"
+          loading="eager"
+          priority={true}
+          alt={project.name + index}
           src={project.pictures[index]}
           width="16"
           height="9"

@@ -30,8 +30,10 @@ ENV NODE_ENV=production
 ENV NODE_PATH=/app/dist/
 
 ## We just need the build to execute the command
+COPY --from=builder /usr/src/app/public ./public
 COPY --from=builder /usr/src/app/.next ./.next
 COPY --from=builder /usr/src/app/node_modules ./node_modules
+COPY --from=builder /usr/src/app/package.json ./package.json
 
 ## uncomment following line, if you want to mount the templates folder
 #COPY ./templates /app/templates

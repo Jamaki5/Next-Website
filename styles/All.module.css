@@ -25,15 +25,15 @@
 }
 
 .picture {
-  animation: pictureDown 2s;
+  animation: pictureDown 1s;
 }
 
 .name {
-  animation: shiftUp 5s;
+  animation: shiftUp 2.5s;
 }
 
 .description {
-  animation: shiftDown 5s;
+  animation: shiftDown 2.5s;
 }
 
 @keyframes shiftUp {

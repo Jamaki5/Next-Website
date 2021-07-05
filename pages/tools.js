@@ -6,7 +6,7 @@ import Hash from "../components/Tools/Hash";
 function tools() {
   return (
     <div className={style.page}>
-      <div className="px-4 h-full w-full flex flex-col place-self-center max-w-6xl">
+      <div className="px-4 w-full flex flex-col place-self-center max-w-6xl">
         <div className="my-6 text-4xl self-center font-semibold md:self-start">
           Tools
         </div>
