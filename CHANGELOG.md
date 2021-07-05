@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/Jamaki5/Next-Website/compare/v0.1.1...v0.1.2) (2021-07-05)
+
+
+### Bug Fixes
+
+* little improvements ([a06beda](https://github.com/Jamaki5/Next-Website/commit/a06bedaa3c77a4da10afbf77d2905df219387b2b))
+
 ## [0.1.1](https://github.com/Jamaki5/Next-Website/compare/v0.1.0...v0.1.1) (2021-07-01)
 
 
