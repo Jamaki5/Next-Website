@@ -1,3 +1,11 @@
+## [0.1.3](https://github.com/Jamaki5/Next-Website/compare/v0.1.2...v0.1.3) (2021-07-05)
+
+
+### Bug Fixes
+
+* **images:** change logos to svg format ([885ef04](https://github.com/Jamaki5/Next-Website/commit/885ef047eac8d35dd3085f7555f7c8ed00c4e334))
+* **images:** set images to unoptimized ([a2762b1](https://github.com/Jamaki5/Next-Website/commit/a2762b1358d407c38f0374d9a79a5cafc6e743a8))
+
 ## [0.1.2](https://github.com/Jamaki5/Next-Website/compare/v0.1.1...v0.1.2) (2021-07-05)
 
 
