@@ -84,9 +84,7 @@ export default function ProjectFront({ project }) {
       <div className="text-lg z-10">{project.description}</div>
       <div className="opacity-75 my-2 hover:opacity-90 relative">
         <Image
-          placeholder="blur"
-          loading="eager"
-          priority={true}
+          unoptimized={true}
           alt={project.name + index}
           src={project.pictures[index]}
           width="16"

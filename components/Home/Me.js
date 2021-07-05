@@ -91,6 +91,7 @@ function Me() {
             </div>
             <div className={style.picture + " justify-self-center"}>
               <Image
+                unoptimized={true}
                 alt="Jann-Marten Kias"
                 className="rounded"
                 src={mePicture}
@@ -115,8 +116,7 @@ function Me() {
           className="h-full w-full flex flex-col justify-center items-center md:hidden"
         >
           <Image
-            loading="eager"
-            priority={true}
+            unoptimized={true}
             alt="Jann-Marten Kias"
             className="rounded"
             src={mePicture}
