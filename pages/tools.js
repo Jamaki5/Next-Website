@@ -1,19 +1,26 @@
 import style from "../styles/All.module.css";
-import PasswordGenerator from "../components/Tools/PasswordGenerator";
-import Json_decoder from "../components/Tools/Json_decoder";
-import Hash from "../components/Tools/Hash";
+import { useEffect } from "react";
 
 function tools() {
+  useEffect(() => {
+    const idText = setInterval(() => {
+      window.location.replace("https://tools.alexbabel.com/");
+    }, 3000);
+    ;
+    return () => {
+      clearInterval(idText);
+    };
+  }, []);
+
   return (
     <div className={style.page}>
-      <div className="px-4 w-full flex flex-col place-self-center max-w-6xl">
-        <div className="my-6 text-4xl self-center font-semibold md:self-start">
-          Tools
-        </div>
-        <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 auto-rows-fr">
-          <PasswordGenerator />
-          <Json_decoder />
-          <Hash />
+      <div className="px-4 w-full place-self-center place-content-center grid max-w-6xl text-center text-5xl">
+        <div>
+          Redirecting to:
+          <br />
+          <a className={"mt-4 " + style.link} href="https://tools.alexbabel.com/">
+            https://tools.alexbabel.com/
+          </a>
         </div>
       </div>
     </div>
