@@ -10,8 +10,15 @@ export default function ProjectFront({ project }) {
   function getButton(link, index) {
     if (link.length === 0) {
       return (
-        <div className="text-white cursor-not-allowed bg-blue-500 rounded hover:shadow-md bg-opacity-100 gird ">
-          <Button color="primary" className="w-full place-content-center" disabled>
+        <div
+          key={project.name + " button " + index}
+          className="text-white cursor-not-allowed bg-blue-500 rounded hover:shadow-md bg-opacity-100 gird "
+        >
+          <Button
+            color="primary"
+            className="w-full place-content-center"
+            disabled
+          >
             {project.button}
           </Button>
         </div>
@@ -19,6 +26,7 @@ export default function ProjectFront({ project }) {
     }
     return (
       <a
+        key={project.name + " button " + index}
         className="w-full bg-blue-500 rounded hover:shadow-md bg-opacity-100 grid"
         target="_blank"
         rel="noopener noreferrer"
@@ -109,7 +117,9 @@ export default function ProjectFront({ project }) {
           return ", " + frame.charAt(0).toUpperCase() + frame.slice(1);
         })}
       </div>
-      <div className={`w-5/6 mt-4 place-self-center z-10 grid gap-2 grid-cols-1 lg:grid-cols-${project.button.length}`}>
+      <div
+        className={`w-5/6 mt-4 place-self-center z-10 grid gap-2 grid-cols-1 lg:grid-cols-${project.button.length}`}
+      >
         {project.link.map((link, index) => getButton(link, index))}
       </div>
     </div>

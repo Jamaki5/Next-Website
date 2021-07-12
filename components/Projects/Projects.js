@@ -38,7 +38,7 @@ const PROJECTS = [
     year: "2020",
     link: [""],
     description:
-      "A small extern Triggerbot. The Offsets have to be changed for every CS:GO version.",
+      "A small external Triggerbot.",
     frameworks: ["c++"],
     pictures: [websitePic],
     button: ["private Project"],
@@ -46,7 +46,10 @@ const PROJECTS = [
   {
     name: "Hearthstone Bot",
     year: "2020",
-    link: ["https://hearthstoneai.github.io/results2020.html", "https://github.com/AlexanderBabel/cig-agent"],
+    link: [
+      "https://hearthstoneai.github.io/results2020.html",
+      "https://github.com/AlexanderBabel/cig-agent",
+    ],
     description:
       "Hearthstone Bot for SabberStone. Got the first place in the official IEEE contest 2020",
     frameworks: ["c#"],
