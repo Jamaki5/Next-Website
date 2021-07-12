@@ -1,3 +1,11 @@
+## [0.1.4](https://github.com/Jamaki5/Next-Website/compare/v0.1.3...v0.1.4) (2021-07-12)
+
+
+### Bug Fixes
+
+* **projects:** add extra Buttons ([6247916](https://github.com/Jamaki5/Next-Website/commit/6247916fb3400862bbe123cdb02d13ee77d0367c))
+* **tools:** added forwarding to alexbabel.com ([705c1f8](https://github.com/Jamaki5/Next-Website/commit/705c1f8de19739d4abd8ef542a927214db5725c3))
+
 ## [0.1.3](https://github.com/Jamaki5/Next-Website/compare/v0.1.2...v0.1.3) (2021-07-05)
 
 
