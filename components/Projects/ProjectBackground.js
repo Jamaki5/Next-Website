@@ -11,6 +11,7 @@ import csharpPicture from "../../public/pictures/projects/frameworks/csharp.svg"
 import nextPicture from "../../public/pictures/projects/frameworks/next.svg";
 import tailwindPicture from "../../public/pictures/projects/frameworks/tailwind.svg";
 import cplusplusPicture from "../../public/pictures/projects/frameworks/c++.svg";
+import threePicture from "../../public/pictures/projects/frameworks/three.svg"
 
 const POSITION = [
   { left: "75%", top: "3%", rotation: "rotateZ(5deg)" },
@@ -49,7 +50,7 @@ export default function ProjectBackground({ project }) {
             image = nextPicture;
             break;
           case "three":
-            image = materialPicture;
+            image = threePicture;
             break;
           case "tailwindcss":
             image = tailwindPicture;

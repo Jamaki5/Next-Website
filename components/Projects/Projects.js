@@ -6,16 +6,17 @@ import ProjectBackground from "./ProjectBackground";
 import websitePic from "../../public/pictures/projects/website/website.jpg";
 import contactPic from "../../public/pictures/projects/website/contact.jpg";
 import sabberPic from "../../public/pictures/projects/sabberstone/sabberstone.jpg";
+import threePic from "../../public/pictures/projects/three/threeWebsite.jpg"
 
 const PROJECTS = [
   {
     name: "Three.js Website",
     year: "2021",
-    link: [""],
+    link: ["https://threejs.org/",""],
     description: "Dummy site for Three.js experience.",
     frameworks: ["javascript", "three", "docker", "next.js"],
-    pictures: [websitePic],
-    button: ["under construction"],
+    pictures: [threePic],
+    button: ["Open three.org","under construction"],
   },
   {
     name: "Website",

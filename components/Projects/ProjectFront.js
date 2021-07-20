@@ -19,7 +19,7 @@ export default function ProjectFront({ project }) {
             className="w-full place-content-center"
             disabled
           >
-            {project.button}
+            {project.button[index]}
           </Button>
         </div>
       );
