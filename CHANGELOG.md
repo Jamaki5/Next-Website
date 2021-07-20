@@ -1,3 +1,11 @@
+## [0.1.5](https://github.com/Jamaki5/Next-Website/compare/v0.1.4...v0.1.5) (2021-07-20)
+
+
+### Bug Fixes
+
+* **Projects:** add Three js pictures ([539f7fa](https://github.com/Jamaki5/Next-Website/commit/539f7faff9bffae92a0e2e5c55fdd7c13ca6b503))
+* **Readme:** edit the Readme ([b257f19](https://github.com/Jamaki5/Next-Website/commit/b257f192e1ed3abef354311d00b08259fc0e8ce6))
+
 ## [0.1.4](https://github.com/Jamaki5/Next-Website/compare/v0.1.3...v0.1.4) (2021-07-12)
 
 
