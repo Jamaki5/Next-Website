@@ -14,9 +14,8 @@ yarn build
 
 Afterwards you can run the optimized build with:
 
-or
 ```bash
-yarn start -p PORT
+yarn start PORT
 ```
 
 Replace the PORT with the port you want. In this repo is also Dockerfile you can run, to build a Docker container. Note that you have to give the Container a port when you start it.
