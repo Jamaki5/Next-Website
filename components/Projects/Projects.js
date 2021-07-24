@@ -6,17 +6,18 @@ import ProjectBackground from "./ProjectBackground";
 import websitePic from "../../public/pictures/projects/website/website.jpg";
 import contactPic from "../../public/pictures/projects/website/contact.jpg";
 import sabberPic from "../../public/pictures/projects/sabberstone/sabberstone.jpg";
-import threePic from "../../public/pictures/projects/three/threeWebsite.jpg"
+import threePic from "../../public/pictures/projects/three/threeWebsite.jpg";
+import csPic from "../../public/pictures/projects/cs-go/trigger.jpg"
 
 const PROJECTS = [
   {
     name: "Three.js Website",
     year: "2021",
-    link: ["https://threejs.org/",""],
+    link: ["https://threejs.org/", ""],
     description: "Dummy site for Three.js experience.",
     frameworks: ["javascript", "three", "docker", "next.js"],
     pictures: [threePic],
-    button: ["Open three.org","under construction"],
+    button: ["Open three.org", "under construction"],
   },
   {
     name: "Website",
@@ -38,24 +39,20 @@ const PROJECTS = [
     name: "CS:GO Triggerbot",
     year: "2020",
     link: [""],
-    description:
-      "A small external Triggerbot.",
+    description: "A small external Triggerbot.",
     frameworks: ["c++"],
-    pictures: [websitePic],
+    pictures: [csPic],
     button: ["private Project"],
   },
   {
     name: "Hearthstone Bot",
     year: "2020",
-    link: [
-      "https://hearthstoneai.github.io/results2020.html",
-      "https://github.com/AlexanderBabel/cig-agent",
-    ],
+    link: ["https://hearthstoneai.github.io/results2020.html"],
     description:
       "Hearthstone Bot for SabberStone. Got the first place in the official IEEE contest 2020",
     frameworks: ["c#"],
     pictures: [sabberPic],
-    button: ["Hearthstone AI GitHub", "Agent GitHub"],
+    button: ["Hearthstone AI GitHub"],
   },
 ];
 
