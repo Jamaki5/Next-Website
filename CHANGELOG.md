@@ -1,3 +1,10 @@
+## [0.1.7](https://github.com/Jamaki5/Next-Website/compare/v0.1.6...v0.1.7) (2021-07-27)
+
+
+### Bug Fixes
+
+* **contact:** edit HCaptcha ([75e59e8](https://github.com/Jamaki5/Next-Website/commit/75e59e8bd50dbdf3b4b385f1edde28e9cd36a549))
+
 ## [0.1.6](https://github.com/Jamaki5/Next-Website/compare/v0.1.5...v0.1.6) (2021-07-24)
 
 
