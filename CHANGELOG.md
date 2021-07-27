@@ -1,3 +1,11 @@
+## [0.1.6](https://github.com/Jamaki5/Next-Website/compare/v0.1.5...v0.1.6) (2021-07-24)
+
+
+### Bug Fixes
+
+* **Project:** new Pictures & removed Button ([4e03c8d](https://github.com/Jamaki5/Next-Website/commit/4e03c8d373123e02146e88368fa497dc4847c44f))
+* **Readme:** edit Readme ([4ed8063](https://github.com/Jamaki5/Next-Website/commit/4ed8063c869fb08944bf8868d814373da36b076d))
+
 ## [0.1.5](https://github.com/Jamaki5/Next-Website/compare/v0.1.4...v0.1.5) (2021-07-20)
 
 
