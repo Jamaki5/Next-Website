@@ -7,7 +7,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import ContactMe from "./otherContacts";
 import style from "../../styles/All.module.css";
 
-const SiteKey = process.env.H_CAPTCHA_SITEKEY;
+const SiteKey = "f5bf5620-f440-4d52-aca5-d9bf9a70b21a";
 
 const regrexEmail = new RegExp("[^@ \t\r\n]+@[^@ \t\r\n]+.[^@ \t\r\n]+");
 

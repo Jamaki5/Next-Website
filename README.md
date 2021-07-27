@@ -30,4 +30,4 @@ SEND_GRID_KEY=""
 FROM_EMAIL=""
 TO_EMAIL=""
 ```
-
+And you have to change your Sitekey in the contact.js file to your own Sitekey
