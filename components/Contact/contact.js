@@ -135,9 +135,9 @@ function contact() {
             <a
               className={style.link}
               target="_blank"
-              href="mailto:Jann-Marten.Kias@web.de"
+              href="mailto:contact@jannkias.com"
             >
-              Jann-Marten.Kias@web.de
+              contact@jannkias.com
             </a>
           </div>
           <div className="flex flex-col sm:flex-row w-full self-center gap-4">
