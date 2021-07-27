@@ -1,3 +1,10 @@
+## [0.1.8](https://github.com/Jamaki5/Next-Website/compare/v0.1.7...v0.1.8) (2021-07-27)
+
+
+### Bug Fixes
+
+* **contact:** fixed Sitekey and Readme ([84ffb38](https://github.com/Jamaki5/Next-Website/commit/84ffb384c612a9c5bf611020c4b428bcb37dd728))
+
 ## [0.1.7](https://github.com/Jamaki5/Next-Website/compare/v0.1.6...v0.1.7) (2021-07-27)
 
 
