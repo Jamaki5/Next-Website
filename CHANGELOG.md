@@ -1,3 +1,10 @@
+## [0.1.9](https://github.com/Jamaki5/Next-Website/compare/v0.1.8...v0.1.9) (2021-07-27)
+
+
+### Bug Fixes
+
+* **contact:** edit mailadress ([b99daed](https://github.com/Jamaki5/Next-Website/commit/b99daed1ae634aa1f66508e1c3791154e262fa9c))
+
 ## [0.1.8](https://github.com/Jamaki5/Next-Website/compare/v0.1.7...v0.1.8) (2021-07-27)
 
 
