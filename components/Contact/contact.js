@@ -7,6 +7,8 @@ import Tooltip from "@material-ui/core/Tooltip";
 import ContactMe from "./otherContacts";
 import style from "../../styles/All.module.css";
 
+const SiteKey = process.env.H_CAPTCHA_SITEKEY;
+
 const regrexEmail = new RegExp("[^@ \t\r\n]+@[^@ \t\r\n]+.[^@ \t\r\n]+");
 
 const CssTextField = dynamic(() => import("../Custom/InputField"), {
@@ -188,7 +190,7 @@ function contact() {
                 languageOverride="en"
                 size="compact"
                 ref={captcha}
-                sitekey="bdab9799-79eb-45cf-87bc-3cce75546476"
+                sitekey={SiteKey}
                 onVerify={(token, ekey) => setToken(token)}
                 theme="dark"
                 onExpire={handleExpire}
