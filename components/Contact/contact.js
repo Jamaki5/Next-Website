@@ -143,6 +143,7 @@ function contact() {
           <div className="flex flex-col sm:flex-row w-full self-center gap-4">
             <div className="w-full">
               <CssTextField
+                error={error.errorName}
                 label="Name"
                 placeholder="Your Name or Company"
                 variant="outlined"
@@ -156,6 +157,7 @@ function contact() {
             </div>
             <div className="w-full">
               <CssTextField
+                error={error.errorAddress}
                 label="E-Mail"
                 placeholder="Your E-Mailaddress"
                 variant="outlined"
@@ -171,6 +173,7 @@ function contact() {
           </div>
           <div>
             <CssTextField
+              error={error.errorMessage}
               label="Message"
               placeholder="Your Message"
               variant="outlined"
@@ -250,7 +253,9 @@ function contact() {
         </div>
       </div>
       <div className="flex flex-col lg:max-w-6xl place-self-center w-full">
-        <div className="ml-2 mt-16 text-2xl font-semibold">Or contact me via: </div>
+        <div className="ml-2 mt-16 text-2xl font-semibold">
+          Or contact me via:{" "}
+        </div>
         <ContactMe />
       </div>
     </div>

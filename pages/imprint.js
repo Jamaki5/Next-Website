@@ -20,9 +20,9 @@ function imprint() {
               <a
                 className={style.link}
                 target="_blank"
-                href="mailto:Jann-Marten.Kias@web.de"
+                href="mailto:contac@jannkias.com"
               >
-                Jann-Marten.Kias@web.de
+                contac@jannkias.com
               </a>
             </p>
             <h2 className="text-2xl font-semibold mt-4">Disclaimer</h2>
