@@ -1,6 +1,6 @@
 # About
 
-This is the sourcecide from my website [jannkias.com](https://jannkias.com/). You can start the developer server with:
+This is the sourcode of my website [jannkias.com](https://jannkias.com/). You can start the developer server with:
 
 ```bash
 yarn dev
@@ -18,7 +18,7 @@ Afterwards you can run the optimized build with:
 yarn start PORT
 ```
 
-Replace the PORT with the port you want. In this repo is also Dockerfile you can run, to build a Docker container. Note that you have to give the Container a port when you start it.
+Replace the PORT with the port you want. In this repo is also a Dockerfile you can run, to build a Docker container. Note that you have to give the Container a port when you start it.
 
 # Env
 
