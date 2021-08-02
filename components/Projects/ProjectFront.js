@@ -28,7 +28,7 @@ export default function ProjectFront({ project }) {
       <a
         key={project.name + " button " + index}
         className="w-full bg-blue-500 rounded hover:shadow-md bg-opacity-100 grid"
-        target="_blank"
+        target={project.link[index].includes("http") ? "_blank" : ""}
         rel="noopener noreferrer"
         href={project.link[index]}
       >

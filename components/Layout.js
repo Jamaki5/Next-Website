@@ -63,7 +63,7 @@ function Layout({ children }) {
       </div>
       <Nav collapsed={collapsed} links={LINKS} setCollapsed={setCollapsed} />
       <div className="min-h-screen md:ml-16">
-        <div className={style.backgroundColor}>{children}</div>
+        <div>{children}</div>
         <Footer />
       </div>
     </>

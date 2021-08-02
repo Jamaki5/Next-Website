@@ -13,11 +13,11 @@ const PROJECTS = [
   {
     name: "Three.js Website",
     year: "2021",
-    link: ["https://threejs.org/", ""],
+    link: ["https://threejs.org/", "/examples/three"],
     description: "Dummy site for Three.js experience.",
     frameworks: ["javascript", "three", "docker", "next.js"],
     pictures: [threePic],
-    button: ["Open three.org", "under construction"],
+    button: ["Visit three.org", "Open Example"],
   },
   {
     name: "Website",
