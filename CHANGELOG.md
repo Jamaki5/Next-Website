@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/Jamaki5/Next-Website/compare/v0.2.0...v0.2.1) (2021-09-01)
+
+
+### Bug Fixes
+
+* **update:** updated outdated dependencies ([5eb34e8](https://github.com/Jamaki5/Next-Website/commit/5eb34e83403fe52cfccdc454b460443706e4e1eb))
+
 # [0.2.0](https://github.com/Jamaki5/Next-Website/compare/v0.1.10...v0.2.0) (2021-08-02)
 
 
