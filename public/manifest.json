@@ -1,0 +1,17 @@
+{
+  "name": "Jann-Marten Kias",
+  "short_name": "Jann-Marten Kias",
+  "start_url": "/?home=true",
+  "icons": [
+    {
+      "src": "/manifest_icon_any.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#FFFFFF",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}

@@ -14,7 +14,7 @@ function tools() {
 
   return (
     <div className={style.page}>
-      <div className="px-4 w-full place-self-center place-content-center grid max-w-6xl text-center text-5xl">
+      <div className="px-4 w-full place-self-center place-content-center grid max-w-6xl text-center text-xl lg:text-5xl">
         <div>
           Redirecting to:
           <br />
