@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/Jamaki5/Next-Website/compare/v0.2.1...v0.2.2) (2022-04-21)
+
+
+### Bug Fixes
+
+* **update:** updated packages ([d6c7fcf](https://github.com/Jamaki5/Next-Website/commit/d6c7fcfca337d74d9ba36836a6999f17e4f4d523))
+
 ## [0.2.1](https://github.com/Jamaki5/Next-Website/compare/v0.2.0...v0.2.1) (2021-09-01)
 
 
