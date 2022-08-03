@@ -30,12 +30,6 @@ const LINKS = [
     show: false,
     icon: <BuildIcon className="text-white hover:text-gray-300" />,
   },
-  {
-    name: "Contact",
-    path: "/contact",
-    show: true,
-    icon: <MailIcon className="text-white hover:text-gray-300" />,
-  },
 ];
 
 function Layout({ children }) {

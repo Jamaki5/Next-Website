@@ -16,12 +16,22 @@ import style from "../../styles/All.module.css";
 
 const TIMELINE = [
   {
-    time: "2017 - now",
-    name: "Bachelor",
+    time: "2022 - now",
+    name: "Master",
     position: "Magdeburg, Germany",
     school: "Otto-von-Guericke University",
     icon: <QueryBuilderIcon />,
     iconColor: "bg-blue-400",
+    content:
+      "Since I completed my bachelor's degree in 2022, I have been in my master's degree.",
+  },
+  {
+    time: "2017 - 2022",
+    name: "Bachelor",
+    position: "Magdeburg, Germany",
+    school: "Otto-von-Guericke University",
+    icon: <CheckCircleIcon />,
+    iconColor: "bg-green-400",
     content:
       "Since 2017 I studied computer science at the Otto-von-Guericke university. While my ongoing Bachelor degree I learned about fundamental principles from algorithms and data structures to machine learning.",
   },
@@ -131,7 +141,7 @@ function AboutMe() {
         >
           &#123;
           <div className={style.varColor}>age:&nbsp;</div>
-          <div className={style.numberColor}>22</div>
+          <div className={style.numberColor}>23</div>
           &#125;
         </Parallax>
         <Parallax
@@ -157,7 +167,7 @@ function AboutMe() {
               enthusiastic about technology through my hobby as a gamer. I am
               currently studying at the Otto-von-Guericke university. Some of
               the subjects I've already completed include: machine learning,
-              deep learning, basics of c ++ programming, computational
+              deep learning, basics of C++ programming, computational
               intelligence in games and a lot more. I am currently looking for
               an internship.
               <br />
@@ -165,7 +175,8 @@ function AboutMe() {
               In my studies and in my free time I have acquired knowledge in
               various areas of software development. I am currently working on
               the development of frontend. My current stack includes: Next.js,
-              React, Tailwind CSS, Material-UI, Javascript, git and Docker.
+              React, Tailwind CSS, Material-UI, Javascript, git and Docker. I am
+              currently working as a working student at MÜNSMEDIA GmbH
             </div>
           </div>
           <div
