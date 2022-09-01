@@ -10,19 +10,19 @@ function imprint() {
             <h2 className="text-2xl font-semibold mt-4">Legal Disclosure</h2>
             <p>Information in accordance with section 5 TMG</p>
             <p>Jann-Marten Kias</p>
-            <p>Wolfenbütteler Str. 66</p>
-            <p>39112 Magdeburg</p>
+            <p>Hohepfortestraße 53</p>
+            <p>39106 Magdeburg</p>
             <p>Germany</p>
             <h2 className="text-2xl font-semibold mt-4">Contact</h2>
-            <p>Telephone: +49 1522 6384414</p>
+            <p>Telephone: +491622068246</p>
             <p>
               E-Mail:{" "}
               <a
                 className={style.link}
                 target="_blank"
-                href="mailto:contac@jannkias.com"
+                href="mailto:Jann-Marten.Kias@web.de"
               >
-                contac@jannkias.com
+                Jann-Marten.Kias@web.de
               </a>
             </p>
             <h2 className="text-2xl font-semibold mt-4">Disclaimer</h2>
@@ -62,7 +62,7 @@ function imprint() {
               of the copyright law).
             </p>
             <p>
-              Quelle:{" "}
+              Source:{" "}
               <a
                 className={style.link}
                 target="_blank"

@@ -176,7 +176,7 @@ function AboutMe() {
               various areas of software development. I am currently working on
               the development of frontend. My current stack includes: Next.js,
               React, Tailwind CSS, Material-UI, Javascript, git and Docker. I am
-              currently working as a working student at MÜNSMEDIA GmbH
+              currently working as a working student at MÜNSMEDIA GmbH.
             </div>
           </div>
           <div

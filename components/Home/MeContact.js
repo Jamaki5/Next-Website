@@ -30,7 +30,7 @@ const CONTACTS = [
   },
   {
     name: "E-Mail",
-    link: "mailto:jamaki5@web.de",
+    link: "mailto:Jann-Marten.Kias@web.de",
     icon: <MailIcon fontSize="inherit" />,
     target: "",
     rel: ""
