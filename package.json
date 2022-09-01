@@ -22,7 +22,7 @@
     "react-dom": "^18.2.0",
     "react-rellax": "^1.0.3",
     "react-three-fiber": "^6.0.13",
-    "three": "^0.143.0"
+    "three": "0.144.0"
   },
   "devDependencies": {
     "@alexbabel/semantic-release-docker": "^2.9.0",
