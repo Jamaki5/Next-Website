@@ -141,7 +141,7 @@ function AboutMe() {
         >
           &#123;
           <div className={style.varColor}>age:&nbsp;</div>
-          <div className={style.numberColor}>23</div>
+          <div className={style.numberColor}>24</div>
           &#125;
         </Parallax>
         <Parallax

@@ -7,13 +7,9 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* PWA primary color */}
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
-          <link rel="manifest" href="manifest.json"/>
-          <link rel="apple-touch-icon" href="/manifest_icon_any.png"></link>
+          <link rel="manifest" href="/manifest.json" />
+					<link rel="apple-touch-icon" href="/logo-128x128.png" />
+					<meta name="theme-color" content="#fff"/>
         </Head>
         <body>
           <Main />
