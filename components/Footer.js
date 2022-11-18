@@ -5,7 +5,7 @@ import style from "../styles/All.module.css";
 function Footer() {
   return (
     <div className="bg-black justify-items-center bg-opacity-80 text-white grid w-full">
-      <div className="mb-4 mt-6">© 2021 Jann-Marten Kias</div>
+      <div className="mb-4 mt-6">© 2022 Jann-Marten Kias</div>
       <div className="flex mb-8">
         <div className={style.link}>
           <Link href="/privacy_policy">Privacy Policy</Link>

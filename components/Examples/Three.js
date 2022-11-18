@@ -61,6 +61,8 @@ function Boxes({ xAxis, zAxis, gap, size, color, fun }) {
 export default function Three({ color, x, y, fun }) {
   return (
     <Canvas
+      id="test"
+      style={{position: "absolute"}}
       className="bg-black min-h-screen"
       colorMaganger={false}
       camera={{ position: [70, 20, 0], fov: 75 }}
